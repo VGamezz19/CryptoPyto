@@ -16,7 +16,7 @@ $("#rowInitDown").click(function(e) {
     e.preventDefault()
     $('html, body').animate({
         scrollTop: $("#page").offset().top
-    }, 2000);
+    }, 1000);
 });
 
 

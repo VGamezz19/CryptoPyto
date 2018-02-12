@@ -32,7 +32,7 @@ body {
     html .container-init #particles-js,
     body .container-init #particles-js {
       z-index: -2;
-      position: absolute;
+      position: fixed;
       min-width: 100%;
       min-height: 100%;
       background: url(../img/estrellas_0.jpg) no-repeat center center fixed;
@@ -48,6 +48,38 @@ body {
       html .container-init #particles-js .iconRow,
       body .container-init #particles-js .iconRow {
         align-self: flex-end; }
+  html #page,
+  body #page {
+    background: repeating-linear-gradient(33.333333deg, rgba(0, 0, 0, 0) -34em, rgba(0, 0, 0, 0) 0em, #E2E2E2 0em, #E2E2E2 31em) !important;
+    position: relative; }
+    html #page nav,
+    body #page nav {
+      background: linear-gradient(black, black);
+      padding: 1em;
+      width: 100%; }
+      html #page nav h1,
+      body #page nav h1 {
+        font-size: 1.5em !important;
+        color: white !important; }
+      html #page nav .navbar-text,
+      body #page nav .navbar-text {
+        color: white; }
+    html #page .contain-header,
+    body #page .contain-header {
+      padding: 3em; }
+      html #page .contain-header li,
+      body #page .contain-header li {
+        padding: 1em;
+        flex: 1;
+        margin-right: 5em;
+        background: white; }
+      html #page .contain-header .header-grafica,
+      body #page .contain-header .header-grafica {
+        min-height: 150px; }
+    html #page .app-content,
+    body #page .app-content {
+      background-color: white !important;
+      min-height: 500px; }
 
 .btn-scroll-down {
   width: 100px;

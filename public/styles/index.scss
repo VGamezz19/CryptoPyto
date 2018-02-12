@@ -32,7 +32,7 @@ body {
         }
         #particles-js {
             z-index: -2;
-            position: absolute;
+            position: fixed;
             min-width: 100%;
             min-height: 100%;
             background: url(../img/estrellas_0.jpg) no-repeat center center fixed;
@@ -48,6 +48,38 @@ body {
             .iconRow {
                 align-self: flex-end
             }
+        }
+    }
+    #page {
+        background: repeating-linear-gradient(33.333333deg, rgba(0, 0, 0, 0) -34em, rgba(0, 0, 0, 0) 0em, #E2E2E2 0em, #E2E2E2 31em) !important;
+        position: relative;
+        nav {
+            background: linear-gradient(black, black);
+            padding: 1em;
+            width: 100%;
+            h1 {
+                font-size: 1.5em !important;
+                color: white !important;
+            }
+            .navbar-text {
+                color: white;
+            }
+        }
+        .contain-header {
+            li {
+                padding: 1em;
+                flex: 1;
+                margin-right: 5em;
+                background: white;
+            }
+            padding: 3em;
+            .header-grafica {
+                min-height: 150px;
+            }
+        }
+        .app-content {
+            background-color: white !important;
+            min-height: 500px;
         }
     }
 }
