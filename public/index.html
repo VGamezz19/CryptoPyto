@@ -11,6 +11,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
     <link href="vendor/bootstrap/4.0/css/bootstrap.min.css" rel="stylesheet">
     <title>React App</title>
@@ -18,30 +19,28 @@
 
 <body>
     <!-- Intro Page -->
-    <header>
-        <!-- NavBar -->
 
-        <nav class="navbar navbar-light bg-faded">
-            <h1 class="navbar-brand mb-0">CryptoPyto</h1>
-            <span class="navbar-text">
-                by 💛 @TeamDevelop
-            </span>
-        </nav>
-
-    </header>
     <!-- BackgroundIMG Paralax-->
-    <section id ='particles-js'>
-        <div>
-            <h1>CRYPTOPYTO</h1>
-        </div>
-        <!-- <div>
-            <span>
-                ICON ROW DOWN
-            </span>
-        </div> -->
+    <section class="container-init" onclick="test(e)">
+        <header>
+            <!-- NavBar -->
+            <nav class="navbar navbar-light bg-faded">
+                <h1 class="navbar-brand mb-0">CryptoPyto</h1>
+                <span class="navbar-text">
+                    by 💛 @TeamDevelop
+                </span>
+            </nav>
+        </header>
+        <section id='particles-js'>
+            <div>
+                <h1>CRYPTOPYTO</h1>
+            </div>
+        </section>
+        <a id='rowInitDown' class='btn-scroll-down scroll skrollable skrollable-between'></a>
     </section>
+
     <!-- MainPage -->
-    <section>
+    <section id ='page' style="heigth:100%">
         <!-- DiagonalIMG Paralax -->
         <div>
 
@@ -135,6 +134,7 @@
     <script src="vendor/jquery/3.3.1/jquery-3.3.1.min.js"></script>
     <script src="vendor/popper/1.0/popper.min.js"></script>
     <script src="vendor/bootstrap/4.0/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
 </body>
 
 </html>
