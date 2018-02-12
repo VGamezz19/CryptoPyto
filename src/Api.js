@@ -14,8 +14,9 @@ let cryptoApi;
     }
 })()
 
-cryptoApi.getCoins().then(res=>showResult(res))
+/*cryptoApi.getCoins().then(res=>showResult(res))
 
 function showResult(data){
     console.log(data)
-}
+}*/
+export default cryptoApi;

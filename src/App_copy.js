@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import '.App.css';
 
 
 class App extends Component {
@@ -13,8 +13,12 @@ class App extends Component {
   }
 
   componentWillMount = () => {// We make the fetch before rendering happenns
-    cryptoApi.getCoins() 
-    
+    cryptoApi.getCoins()
+    .then(result=>this.setState({
+      arrayData:result
+    }))
+
+  
   }
 
   render() {
