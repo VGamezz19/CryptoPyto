@@ -4,6 +4,19 @@ import './App.css';
 
 
 class App extends Component {
+
+  constructor(){
+    super()
+    this.setState = {
+      arrayData:[]
+    }
+  }
+
+  componentWillMount = () => {// We make the fetch before rendering happenns
+    cryptoApi.getCoins() 
+    
+  }
+
   render() {
     return (
       <div className="App">
