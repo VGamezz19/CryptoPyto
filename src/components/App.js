@@ -16,18 +16,18 @@ class App extends Component {
   }
 
   componentWillMount = () => {
+    console.log("WillMount")
     cryptoApi.getCoins()
     .then(res => this.setState({arrayResult:res}))
   }
 
 
   componentDidMount = () => {
+    console.log("YaDidMount")
     setInterval(()=> {
       cryptoApi.getCoins()
       .then(res => this.setState({arrayResult:res}))
-  }, 120000);
-
-    
+    }, 10000); 
   }
   
   //res => this.setState({arrayResult:res})
@@ -35,21 +35,36 @@ class App extends Component {
   componentWillUnmount() {
     clearInterval(this.interval)
   }
-  
+
+  componentWillUpdate(nextProps, nextState){
+    console.log("UpdateadoComponent")
+    
+    this.setState((prevState)=>{
+      chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
+    //console.log(nextState.arrayResult[0].price_usd)
+     })
+  }
+
+
+
 
   render() {
+    console.log(this.state)
+    console.log("SoyRender")
     const data = {
       columns: [
 
-        ['data1', 3000, 200, 10, 4000, 150, 20]
+        this.state.chartData
       ]
     };
+    console.log(data)
 
-    /*this.state.arrayResults.map((cash)=>{
-      columns.push(cash.price_usd)
+
+    /*this.state.arrayResult.map((cash)=>{
+      console.log(cash)
     })*/
 
-    console.log(this.state.arrayResult[0])
+    //console.log("Hola",this.state.arrayResult[0])// me devuelve el primer objeto del array {id:bitcoin,:price_usd:300}
     return (  
       <div className="App">
         <header className="App-header">
