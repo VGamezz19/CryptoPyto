@@ -89,7 +89,7 @@ function showResult(data) {
 
 */
 
-/*SIMPLIFICANDO Y ELIMINANDO REPETICIONES*/
+/*SIMPLIFICANDO Y ELIMINANDO REPETICIONES
 
 let cryptoApi; let CryptoHistorical;
 (function () {
@@ -128,7 +128,8 @@ function showResult(data) {
     console.log(data)
 }
 export default cryptoApi;
-/*PROBANDO A METER COIN EN EL CALL
+*/
+/*PROBANDO A METER COIN EN EL CALL*/
 
 
 let cryptoApi; let CryptoHistorical;
@@ -137,7 +138,7 @@ let cryptoApi; let CryptoHistorical;
     
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const baseUrl = "https://api.coinmarketcap.com/v1/ticker"
-    const preHistoricalPriceURL = "https://min-api.cryptocompare.com/data/histominute?fsym=" + coin  
+    const preHistoricalPriceURL = "https://min-api.cryptocompare.com/data/histominute?fsym=" 
     const postHistoricalPriceURL = "&tsym=EUR&limit=20&aggregate=3&e=CCCAGG"
 
     cryptoApi = {
@@ -154,7 +155,7 @@ let cryptoApi; let CryptoHistorical;
     CryptoHistorical = {
         preHistoricalPriceURL,
 
-        coin:"USD",
+        coin:"BTC",
         call: function () {
             return fetch(proxyurl + preHistoricalPriceURL+this.coin+postHistoricalPriceURL)
                 .then(res => res.json())
@@ -171,8 +172,6 @@ function showResult(data) {
     console.log(data)
 }
 
-}
 
-}
-*/
+
 
