@@ -1,6 +1,6 @@
 # CryptoPyto
 
-![Imagen]()
+![Imagen](https://github.com/VGamezz19/CryptoPyto/blob/vicBranch/design/mockUp.png)
 Haga [Click aqui](url..) para ver el diseño completo de la aplicacion.
 
 # APP CRYPTOMONEDA
