@@ -165,12 +165,15 @@ let cryptoApi; let CryptoHistorical;
 
 })()
 export default cryptoApi;
-cryptoApi.getCoins().then(res => showResult(res))
+
+//Here you can teste the API and see the results in browser terminal
+
+//cryptoApi.getCoins().then(res => showResult(res))
 //CryptoHistorical.call().then(res => showResult(res))
 
-function showResult(data) {
-    console.log(data)
-}
+// function showResult(data) {
+//     console.log(data)
+// }
 
 
 

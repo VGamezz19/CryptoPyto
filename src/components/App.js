@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
-import cryptoApi from '../Api.js';
+import cryptoApi from '../API-Cli/cryptoApi.js';
 import C3Chart from 'react-c3js';
-import 'c3/c3.css';
 import RowComponent from './RowComponent/RowComponent'
 
 class App extends Component {
-
-  constructor(){
+  constructor() {
     super()
     this.state = {
-        arrayResult:[],
-        chartData:[]
+      arrayResult: [],
+      chartData: []
     }
   }
 
@@ -20,31 +16,31 @@ class App extends Component {
   componentWillMount = () => {
     //console.log("WillMount")
     cryptoApi.getCoins()
-    .then(res => this.setState({arrayResult:res}))
+      .then(res => this.setState({ arrayResult: res }))
   }
 
-// Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
+  // Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
   componentDidMount = () => {
     //console.log("YaDidMount")
-    setInterval(()=> {
+    setInterval(() => {
       cryptoApi.getCoins()
-      .then(res => this.setState({arrayResult:res}))
-    }, 50000); 
+        .then(res => this.setState({ arrayResult: res }))
+    }, 50000);
   }
-  
+
   //res => this.setState({arrayResult:res})
 
   componentWillUnmount() {
     clearInterval(this.interval)
   }
 
-  componentWillUpdate(nextProps, nextState){
+  componentWillUpdate(nextProps, nextState) {
     //console.log("UpdateadoComponent")
-    
-    this.setState((prevState)=>{
+
+    this.setState((prevState) => {
       chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
-    console.log(nextState.arrayResult[0].price_usd)
-     })
+      console.log(nextState.arrayResult[0].price_usd)
+    })
   }
 
 
@@ -64,7 +60,7 @@ class App extends Component {
     })*/
 
     //console.log("Hola",this.state.arrayResult[0])// me devuelve el primer objeto del array {id:bitcoin,:price_usd:300}
-    return (  
+    return (
       /*<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -75,23 +71,23 @@ class App extends Component {
         </p>
         <C3Chart data={data} />
       </div>*/
-        <section className='app-content' id='roow'>
-            <table>
-              <tbody>
+      <section className='app-content' id='roow'>
+        <table>
+          <tbody>
 
-                <tr className='trHeader'>
-                    <th>COINS</th>
-                    <th>PRICE</th>
-                    <th>7D CHART (USD)</th>
-                    <th>CHG. 24H</th>
-                </tr>    
-                <RowComponent/>                
-                <RowComponent/>                
-                <RowComponent/>
+            <tr className='trHeader'>
+              <th>COINS</th>
+              <th>PRICE</th>
+              <th>7D CHART (USD)</th>
+              <th>CHG. 24H</th>
+            </tr>
+            <RowComponent />
+            <RowComponent />
+            <RowComponent />
 
-              </tbody>
-            </table>
-        </section>
+          </tbody>
+        </table>
+      </section>
     );
   }
 }
