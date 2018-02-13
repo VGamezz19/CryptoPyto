@@ -15,13 +15,14 @@ class App extends Component {
     }
   }
 
+  // Antes del renderizado nos traemos los datos
   componentWillMount = () => {
     console.log("WillMount")
     cryptoApi.getCoins()
     .then(res => this.setState({arrayResult:res}))
   }
 
-
+// Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
   componentDidMount = () => {
     console.log("YaDidMount")
     setInterval(()=> {
