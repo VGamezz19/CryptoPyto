@@ -41,10 +41,6 @@
 
     <!-- MainPage -->
     <section id='page'>
-                    <!-- <section id='particles-js'>
-                        asd
-
-                    </section> -->
         <!-- DiagonalIMG Paralax -->
         <!-- Component Header -->
         <nav class="navbar navbar-light bg-faded">
@@ -54,9 +50,9 @@
             </span>
         </nav>
         <header class='contain-header'>
-            <ul class='row'>
+            <ul>
                 <!-- Hijo Grafic -->
-                <li >
+                <li>
                     <h1>BTC - USD</h1>
                     <h2> $8,887.55</h2>
                     <div class='header-grafica'>
@@ -64,7 +60,7 @@
                     </div>
                 </li>
                 <!-- Hijo Grafic -->
-                <li >
+                <li>
                     <h1>BTC - USD</h1>
                     <h2> $8,887.55</h2>
                     <div class='header-grafica'>
@@ -72,7 +68,7 @@
                     </div>
                 </li>
                 <!-- Hijo Grafic -->
-                <li >
+                <li>
                     <h1>BTC - USD</h1>
                     <h2> $8,887.55</h2>
                     <div class='header-grafica'>
@@ -84,16 +80,19 @@
         <!-- App Component -->
         <section class='app-content'>
             <table>
-                <tr>
+                <tr class='trHeader' ->
                     <th>COINS</th>
                     <th>PRICE</th>
                     <th>7D CHART (USD)</th>
                     <th>CHG. 24H</th>
                 </tr>
                 <!-- HijoRow -->
-                <tr>
+                <tr class='rowTr'>
                     <!-- NietoIMG -->
-                    <td>IMG Coin</td>
+                    <td>
+                        <img src="../src/img/1-bitcoin.png" alt="">
+                        <h4>Bitcoin</h4>
+                    </td>
                     <!-- NietoPrice -->
                     <td>$8.234,55</td>
                     <!-- NietoGrafica -->
@@ -102,7 +101,7 @@
                     <td>-1.09%</td>
                 </tr>
                 <!-- HijoRow -->
-                <tr>
+                <tr class='rowTr'>
                     <!-- NietoIMG -->
                     <td>IMG Coin</td>
                     <!-- NietoPrice -->
@@ -111,9 +110,9 @@
                     <td>Grafica REACT</td>
                     <!-- NietoCHG -->
                     <td>-1.09%</td>
-                </tr>
+                </tr class='rowTr'>
                 <!-- HijoRow -->
-                <tr>
+                <tr class='rowTr'>
                     <!-- NietoIMG -->
                     <td>IMG Coin</td>
                     <!-- NietoPrice -->
@@ -131,7 +130,7 @@
             </div>
         </section>
     </section>
-    <script src="styles/particles/particles.js"></script>
+    <script src="js/particles/particles.js"></script>
     <script src="vendor/jquery/3.3.1/jquery-3.3.1.min.js"></script>
     <script src="vendor/popper/1.0/popper.min.js"></script>
     <script src="vendor/bootstrap/4.0/js/bootstrap.min.js"></script>

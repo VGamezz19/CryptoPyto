@@ -1,3 +1,4 @@
+@import 'arrowIcon';
 html,
 body {
     font-family: 'Cutive Mono', monospace !important;
@@ -23,9 +24,6 @@ body {
                 }
             }
         }
-        #rowInitDown {
-            cursor: pointer;
-        }
         canvas {
             z-index: -1;
             position: fixed
@@ -50,8 +48,11 @@ body {
             }
         }
     }
+    $standar-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
     #page {
-        background: repeating-linear-gradient(33.333333deg, rgba(0, 0, 0, 0) -34em, rgba(0, 0, 0, 0) 0em, #E2E2E2 0em, #E2E2E2 31em) !important;
+        background: repeating-linear-gradient(33.333333deg, #1b1e3c -34em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 31em) !important;
         position: relative;
         nav {
             background: linear-gradient(black, black);
@@ -66,71 +67,78 @@ body {
             }
         }
         .contain-header {
-            li {
-                padding: 1em;
-                flex: 1;
-                margin-right: 5em;
-                background: white;
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            ul {
+                padding: 0;
+                display: flex;
+                li {
+                    h1 {
+                        font-size: 1.5em;
+                    }
+                    h2 {
+                        font-size: 1em;
+                    }
+                    list-style: none;
+                    padding: 1em;
+                    flex: 1;
+                    margin: 1em;
+                    background: white;
+                }
+                
             }
-            padding: 3em;
             .header-grafica {
-                min-height: 150px;
+                min-height: 100px;
             }
         }
         .app-content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 2em;
             background-color: white !important;
             min-height: 500px;
+            table {
+                width: 100%;
+                tbody {
+                    flex-direction: column;
+                    display: flex;
+                    .trHeader {
+                        display: flex;
+                        margin-bottom: 1em;
+                        th {
+                            box-shadow: $standar-box-shadow;
+                            flex: 1;
+                            padding: 10px;
+                            margin: 3px;
+                        }
+                        th:nth-child(3) {
+                            flex: 3;
+                        }
+                    }
+                    .rowTr {
+                        display: flex;
+                        box-shadow: $standar-box-shadow;
+                        min-height: 14em;
+                        flex-wrap: wrap;
+                        td {
+                            flex: 1;
+                            margin: 13px;
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            img {
+                                width: 80%;
+                            }
+                        }
+                        td:nth-child(3) {
+                            flex: 3;
+                        }
+                    }
+                }
+            }
         }
-    }
-}
-
-.btn-scroll-down {
-    width: 100px;
-    height: 50px;
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 10;
-    -webkit-transition: display 0.5s easy-in-out;
-    transition: display 0.5s easy-in-out;
-}
-
-.btn-scroll-down:before {
-    bottom: 20px;
-    width: 60px;
-    height: 60px;
-}
-
-.btn-scroll-down:after {
-    width: 30px;
-    height: 30px;
-    bottom: 35px;
-    -webkit-animation: sc-down-a 0.3s infinite alternate;
-    animation: sc-down-a 0.3s infinite alternate;
-}
-
-.btn-scroll-down:before,
-.btn-scroll-down:after {
-    content: '';
-    display: block;
-    border-bottom: 5px solid #fff;
-    border-right: 5px solid #fff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
-// Animations 
-@keyframes sc-down-a {
-    0% {
-        bottom: 35px
-    }
-    0% {
-        bottom: 30px
     }
 }
