@@ -20,7 +20,6 @@ let cryptoApi;
 
 function showResult(data){
     console.log(data)
-<<<<<<< HEAD
 }
 
 //Segunda llamada 
@@ -90,7 +89,7 @@ function showResult(data) {
 
 */
 
-/*SIMPLIFICANDO Y ELIMINANDO REPETICIONES
+/*SIMPLIFICANDO Y ELIMINANDO REPETICIONES*/
 
 let cryptoApi; let CryptoHistorical;
 (function () {
@@ -128,10 +127,8 @@ CryptoHistorical.call().then(res => showResult(res))
 function showResult(data) {
     console.log(data)
 }
-
-*/
-
-/*PROBANDO A METER COIN EN EL CALL*/
+export default cryptoApi;
+/*PROBANDO A METER COIN EN EL CALL
 
 
 let cryptoApi; let CryptoHistorical;
@@ -173,9 +170,9 @@ CryptoHistorical.call().then(res => showResult(res))
 function showResult(data) {
     console.log(data)
 }
-||||||| merged common ancestors
+
 }
-=======
-}*/
-export default cryptoApi;
->>>>>>> eab3425fb9c1a63d70bb320697b0e21d5175b771
+
+}
+*/
+
