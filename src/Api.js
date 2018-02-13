@@ -127,7 +127,7 @@ CryptoHistorical.call().then(res => showResult(res))
 function showResult(data) {
     console.log(data)
 }
-export default cryptoApi;
+
 */
 /*PROBANDO A METER COIN EN EL CALL*/
 
@@ -164,9 +164,9 @@ let cryptoApi; let CryptoHistorical;
     }
 
 })()
-
+export default cryptoApi;
 cryptoApi.getCoins().then(res => showResult(res))
-CryptoHistorical.call().then(res => showResult(res))
+//CryptoHistorical.call().then(res => showResult(res))
 
 function showResult(data) {
     console.log(data)

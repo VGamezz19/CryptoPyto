@@ -21,7 +21,7 @@
     <!-- Intro Page -->
 
     <!-- BackgroundIMG Paralax-->
-    <section class="container-init" onclick="test(e)">
+    <section class="container-init">
         <header>
             <!-- NavBar -->
             <nav class="navbar navbar-light bg-faded">
@@ -77,58 +77,11 @@
                 </li>
             </ul>
         </header>
-        <!-- App Component -->
-        <section class='app-content'>
-            <table>
-                <tr class='trHeader' ->
-                    <th>COINS</th>
-                    <th>PRICE</th>
-                    <th>7D CHART (USD)</th>
-                    <th>CHG. 24H</th>
-                </tr>
-                <!-- HijoRow -->
-                <tr class='rowTr'>
-                    <!-- NietoIMG -->
-                    <td>
-                        <img src="../src/img/1-bitcoin.png" alt="">
-                        <h4>Bitcoin</h4>
-                    </td>
-                    <!-- NietoPrice -->
-                    <td>$8.234,55</td>
-                    <!-- NietoGrafica -->
-                    <td>Grafica REACT</td>
-                    <!-- NietoCHG -->
-                    <td>-1.09%</td>
-                </tr>
-                <!-- HijoRow -->
-                <tr class='rowTr'>
-                    <!-- NietoIMG -->
-                    <td>IMG Coin</td>
-                    <!-- NietoPrice -->
-                    <td>$8.234,55</td>
-                    <!-- NietoGrafica -->
-                    <td>Grafica REACT</td>
-                    <!-- NietoCHG -->
-                    <td>-1.09%</td>
-                </tr class='rowTr'>
-                <!-- HijoRow -->
-                <tr class='rowTr'>
-                    <!-- NietoIMG -->
-                    <td>IMG Coin</td>
-                    <!-- NietoPrice -->
-                    <td>$8.234,55</td>
-                    <!-- NietoGrafica -->
-                    <td>Grafica REACT</td>
-                    <!-- NietoCHG -->
-                    <td>-1.09%</td>
-                </tr>
-            </table>
-            <div>
-                <span>
-                    ICON ROW DOWN
-                </span>
-            </div>
-        </section>
+
+        <div id='root'></div>
+        <div class = 'template-rowIcon'>
+                <a class='btn-scroll-down scroll skrollable skrollable-between'></a>
+        </div>
     </section>
     <script src="js/particles/particles.js"></script>
     <script src="vendor/jquery/3.3.1/jquery-3.3.1.min.js"></script>

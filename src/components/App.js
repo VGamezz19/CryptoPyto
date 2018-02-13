@@ -4,6 +4,7 @@ import '../App.css';
 import cryptoApi from '../Api.js';
 import C3Chart from 'react-c3js';
 import 'c3/c3.css';
+import RowComponent from './RowComponent/RowComponent'
 
 class App extends Component {
 
@@ -17,18 +18,18 @@ class App extends Component {
 
   // Antes del renderizado nos traemos los datos
   componentWillMount = () => {
-    console.log("WillMount")
+    //console.log("WillMount")
     cryptoApi.getCoins()
     .then(res => this.setState({arrayResult:res}))
   }
 
 // Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
   componentDidMount = () => {
-    console.log("YaDidMount")
+    //console.log("YaDidMount")
     setInterval(()=> {
       cryptoApi.getCoins()
       .then(res => this.setState({arrayResult:res}))
-    }, 10000); 
+    }, 50000); 
   }
   
   //res => this.setState({arrayResult:res})
@@ -38,27 +39,24 @@ class App extends Component {
   }
 
   componentWillUpdate(nextProps, nextState){
-    console.log("UpdateadoComponent")
+    //console.log("UpdateadoComponent")
     
     this.setState((prevState)=>{
       chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
-    //console.log(nextState.arrayResult[0].price_usd)
+    console.log(nextState.arrayResult[0].price_usd)
      })
   }
 
 
-
-
   render() {
-    console.log(this.state)
-    console.log("SoyRender")
+    //console.log(this.state)
+    //console.log("SoyRender")
     const data = {
       columns: [
-
         this.state.chartData
       ]
     };
-    console.log(data)
+    //console.log(data)
 
 
     /*this.state.arrayResult.map((cash)=>{
@@ -67,7 +65,7 @@ class App extends Component {
 
     //console.log("Hola",this.state.arrayResult[0])// me devuelve el primer objeto del array {id:bitcoin,:price_usd:300}
     return (  
-      <div className="App">
+      /*<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -76,7 +74,24 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <C3Chart data={data} />
-      </div>
+      </div>*/
+        <section className='app-content' id='roow'>
+            <table>
+              <tbody>
+
+                <tr className='trHeader'>
+                    <th>COINS</th>
+                    <th>PRICE</th>
+                    <th>7D CHART (USD)</th>
+                    <th>CHG. 24H</th>
+                </tr>    
+                <RowComponent/>                
+                <RowComponent/>                
+                <RowComponent/>
+
+              </tbody>
+            </table>
+        </section>
     );
   }
 }
