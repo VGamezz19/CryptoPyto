@@ -1,6 +1,16 @@
 
 # Created by https://www.gitignore.io/api/osx,node,macos
 
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+
 .sass-cache
 
 ### macOS ###
