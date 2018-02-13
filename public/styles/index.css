@@ -90,7 +90,7 @@ body {
         align-self: flex-end; }
   html #page,
   body #page {
-    background: repeating-linear-gradient(33.333333deg, #1b1e3c -34em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 31em) !important;
+    background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
     position: relative; }
     html #page nav,
     body #page nav {
