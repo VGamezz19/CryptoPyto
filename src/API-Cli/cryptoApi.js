@@ -185,6 +185,11 @@ class CryptoApi {
         let url = `https://min-api.cryptocompare.com/data/histominute?fsym=${coin}&tsym=EUR&limit=20&aggregate=3&e=CCCAGG`
         return this.call(this.proxyurl + url)
     }
+    getConiLastHistory = (coin = false) => {
+        if(!coin) throw new Error ('getHistorical(...) <-- need coin to search...')
+        let url = `https://min-api.cryptocompare.com/data/histominute?fsym=${coin}&tsym=EUR&limit=0&aggregate=3&e=CCCAGG`
+        return this.call(this.proxyurl + url)
+    }
 }
 const cryptoApi = new CryptoApi()
 
@@ -201,9 +206,10 @@ export default  cryptoApi
 
 //cryptoApi.getCoins().then(res => showResult(res))
 //CryptoHistorical.call().then(res => showResult(res))
-cryptoApi.getCoins().then(res => showResult(res))
-
-function showResult(data) {
-    console.log(data)
-}
+// cryptoApi.getCoins().then(res => showResult(res))
+// cryptoApi.getConiHistorical('BTC').then(res => showResult(res))
+// cryptoApi.getConiLastHistory('BTC').then(res => showResult(res))
+// function showResult(data) {
+//     console.log(data)
+// }
 
