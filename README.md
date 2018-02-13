@@ -1,5 +1,5 @@
 # CryptoPyto
-Haga [Click aqui](http://creepy-shop.surge.sh/) para ver el diseño **actual** de la aplicaciongs.
+Haga [Click aqui](http://creepy-shop.surge.sh/) para ver el diseño **actual** de la aplicacion.
 
 ![Imagen](https://github.com/VGamezz19/CryptoPyto/blob/vicBranch/design/mockUp.png)
 
