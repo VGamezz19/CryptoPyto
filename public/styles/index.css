@@ -1,0 +1,181 @@
+.btn-scroll-down:before {
+  bottom: 20px;
+  width: 60px;
+  height: 60px; }
+
+.btn-scroll-down:after {
+  width: 30px;
+  height: 30px;
+  bottom: 35px;
+  -webkit-animation: sc-down-a 0.3s infinite alternate;
+  animation: sc-down-a 0.3s infinite alternate; }
+
+.btn-scroll-down {
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  -webkit-transition: display 0.5s easy-in-out;
+  transition: display 0.5s easy-in-out; }
+
+.btn-scroll-down:before,
+.btn-scroll-down:after {
+  content: '';
+  display: block;
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+@keyframes sc-down-a {
+  0% {
+    bottom: 35px; }
+  0% {
+    bottom: 30px; } }
+html,
+body {
+  font-family: 'Cutive Mono', monospace !important;
+  font-size: 1em !important;
+  width: 100%;
+  height: 100%; }
+  html .container-init,
+  body .container-init {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%; }
+    html .container-init header nav,
+    body .container-init header nav {
+      background: linear-gradient(black, rgba(0, 0, 0, 0));
+      padding: 1em;
+      position: absolute;
+      width: 100%; }
+      html .container-init header nav h1,
+      body .container-init header nav h1 {
+        font-size: 1.5em !important;
+        color: white !important; }
+      html .container-init header nav .navbar-text,
+      body .container-init header nav .navbar-text {
+        color: white; }
+    html .container-init canvas,
+    body .container-init canvas {
+      z-index: -1;
+      position: fixed; }
+    html .container-init #particles-js,
+    body .container-init #particles-js {
+      z-index: -2;
+      position: fixed;
+      min-width: 100%;
+      min-height: 100%;
+      background: url(../img/estrellas_0.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      color: white;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      html .container-init #particles-js .iconRow,
+      body .container-init #particles-js .iconRow {
+        align-self: flex-end; }
+  html #page,
+  body #page {
+    background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
+    position: relative; }
+    html #page nav,
+    body #page nav {
+      background: linear-gradient(black, black);
+      padding: 1em;
+      width: 100%; }
+      html #page nav h1,
+      body #page nav h1 {
+        font-size: 1.5em !important;
+        color: white !important; }
+      html #page nav .navbar-text,
+      body #page nav .navbar-text {
+        color: white; }
+    html #page .contain-header,
+    body #page .contain-header {
+      display: flex;
+      flex-direction: column;
+      padding: 2em; }
+      html #page .contain-header ul,
+      body #page .contain-header ul {
+        padding: 0;
+        display: flex; }
+        html #page .contain-header ul li,
+        body #page .contain-header ul li {
+          list-style: none;
+          padding: 1em;
+          flex: 1;
+          margin: 1em;
+          background: white; }
+          html #page .contain-header ul li h1,
+          body #page .contain-header ul li h1 {
+            font-size: 1.5em; }
+          html #page .contain-header ul li h2,
+          body #page .contain-header ul li h2 {
+            font-size: 1em; }
+      html #page .contain-header .header-grafica,
+      body #page .contain-header .header-grafica {
+        min-height: 100px; }
+    html #page .app-content,
+    body #page .app-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 2em;
+      background-color: white !important;
+      min-height: 500px; }
+      html #page .app-content table,
+      body #page .app-content table {
+        width: 100%; }
+        html #page .app-content table tbody,
+        body #page .app-content table tbody {
+          flex-direction: column;
+          display: flex; }
+          html #page .app-content table tbody .trHeader,
+          body #page .app-content table tbody .trHeader {
+            display: flex;
+            margin-bottom: 1em; }
+            html #page .app-content table tbody .trHeader th,
+            body #page .app-content table tbody .trHeader th {
+              box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+              flex: 1;
+              padding: 10px;
+              margin: 3px; }
+            html #page .app-content table tbody .trHeader th:nth-child(3),
+            body #page .app-content table tbody .trHeader th:nth-child(3) {
+              flex: 3; }
+          html #page .app-content table tbody .rowTr,
+          body #page .app-content table tbody .rowTr {
+            display: flex;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            min-height: 14em;
+            flex-wrap: wrap; }
+            html #page .app-content table tbody .rowTr td,
+            body #page .app-content table tbody .rowTr td {
+              flex: 1;
+              margin: 13px;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              flex-direction: column; }
+              html #page .app-content table tbody .rowTr td img,
+              body #page .app-content table tbody .rowTr td img {
+                width: 80%; }
+            html #page .app-content table tbody .rowTr td:nth-child(3),
+            body #page .app-content table tbody .rowTr td:nth-child(3) {
+              flex: 3; }
+
+/*# sourceMappingURL=index.css.map */

@@ -16,10 +16,11 @@ let cryptoApi;
     }
 })()
 
-cryptoApi.getCoins().then(res=>showResult(res))
+/*cryptoApi.getCoins().then(res=>showResult(res))
 
 function showResult(data){
     console.log(data)
+<<<<<<< HEAD
 }
 
 //Segunda llamada 
@@ -172,3 +173,9 @@ CryptoHistorical.call().then(res => showResult(res))
 function showResult(data) {
     console.log(data)
 }
+||||||| merged common ancestors
+}
+=======
+}*/
+export default cryptoApi;
+>>>>>>> eab3425fb9c1a63d70bb320697b0e21d5175b771
