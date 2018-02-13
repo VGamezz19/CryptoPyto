@@ -161,21 +161,25 @@ body {
           body #page .app-content table tbody .rowTr {
             display: flex;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-            min-height: 14em;
+            margin: 10px;
             flex-wrap: wrap; }
             html #page .app-content table tbody .rowTr td,
             body #page .app-content table tbody .rowTr td {
               flex: 1;
-              margin: 13px;
+              margin: 0 13px;
               justify-content: center;
               align-items: center;
               display: flex;
               flex-direction: column; }
               html #page .app-content table tbody .rowTr td img,
               body #page .app-content table tbody .rowTr td img {
-                width: 80%; }
+                width: 45%; }
             html #page .app-content table tbody .rowTr td:nth-child(3),
             body #page .app-content table tbody .rowTr td:nth-child(3) {
               flex: 3; }
+    html #page .template-rowIcon,
+    body #page .template-rowIcon {
+      height: 150px;
+      display: flex; }
 
 /*# sourceMappingURL=index.css.map */

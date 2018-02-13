@@ -120,17 +120,17 @@ body {
                     .rowTr {
                         display: flex;
                         box-shadow: $standar-box-shadow;
-                        min-height: 14em;
+                        margin: 10px;
                         flex-wrap: wrap;
                         td {
                             flex: 1;
-                            margin: 13px;
+                            margin: 0 13px;
                             justify-content: center;
                             align-items: center;
                             display: flex;
                             flex-direction: column;
                             img {
-                                width: 80%;
+                                width: 45%;
                             }
                         }
                         td:nth-child(3) {
@@ -139,6 +139,10 @@ body {
                     }
                 }
             }
+        }
+        .template-rowIcon {
+            height: 150px;
+            display: flex;
         }
     }
 }
