@@ -1,7 +1,10 @@
 # CryptoPyto
+Haga [Click aqui](http://creepy-shop.surge.sh/) para ver el diseño **actual** de la aplicacion.
 
 ![Imagen](https://github.com/VGamezz19/CryptoPyto/blob/vicBranch/design/mockUp.png)
-Haga [Click aqui](url..) para ver el diseño completo de la aplicacion.
+
+
+
 
 # APP CRYPTOMONEDA
 Aplicación que va a recoger datos de una API a tiempo real, para ver el mercado actual de las crypto monedas.
