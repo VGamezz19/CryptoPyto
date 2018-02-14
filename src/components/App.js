@@ -5,6 +5,8 @@ import RowComponent from './RowComponent/RowComponent'
 import Loader from './Loader/Loader'
 import IconsRow from './IconRow/IconsRow'
 import { CSSTransitionGroup } from 'react-transition-group'
+import * as Scroll from 'react-scroll';
+
 class App extends Component {
   constructor() {
     super()
@@ -22,6 +24,8 @@ class App extends Component {
     }))
 
   addingRowIcon = () => {
+    Scroll.animateScroll.scrollToBottom();
+
     this.setState(prevState => {
       return {
         lengthCoin: prevState.lengthCoin + 3,
@@ -49,7 +53,6 @@ class App extends Component {
                 transitionLeaveTimeout={300}>
                 {this.state.coinsShow.length < 1 ? <Loader /> : this.state.coinsShow.map(coin => <RowComponent dataCoin={coin} />)}
               </CSSTransitionGroup>
-
             </tbody>
           </table>
         </section>

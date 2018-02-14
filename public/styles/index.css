@@ -104,6 +104,20 @@
   35% {
     -webkit-transform: scale3D(0, 0, 1);
     transform: scale3D(0, 0, 1); } }
+.example-enter {
+  opacity: 0.01; }
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.example-leave {
+  opacity: 1; }
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in; }
+
 html,
 body {
   font-family: 'Cutive Mono', monospace !important;
@@ -244,19 +258,5 @@ body {
     body #page .template-rowIcon {
       height: 150px;
       display: flex; }
-
-.example-enter {
-  opacity: 0.01; }
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in; }
-
-.example-leave {
-  opacity: 1; }
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in; }
 
 /*# sourceMappingURL=index.css.map */
