@@ -16,7 +16,10 @@ class App extends Component {
       lengthCoin: 2
     }
   }
-
+  componentWillMount(){
+    console.log("scrollTops")
+    Scroll.animateScroll.scrollToTop();
+  }
   componentDidMount = () => cryptoApi.getCoins()
     .then(res => this.setState({ dataCoins: res }))
     .then(res => this.setState({
@@ -41,7 +44,7 @@ class App extends Component {
           <table>
             <tbody>
 
-              <tr className='trHeader d-none d-sm-block'>
+              <tr className='trHeader hidden-small-screen'>
                 <th>COINS</th>
                 <th>PRICE</th>
                 <th>7D CHART (USD)</th>

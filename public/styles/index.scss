@@ -2,6 +2,8 @@
 @import 'loader';
 @import 'animationsComponents';
 @import 'loaderNietos';
+$break-small: 450px;
+$break-large: 600px;
 html,
 body {
     font-family: 'Cutive Mono', monospace !important;
@@ -57,6 +59,12 @@ body {
     #page {
         background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
         position: relative;
+        @media screen and (max-width: $break-small) {
+            min-height: 1112px;
+        }
+        @media screen and (min-width: $break-large) {
+            min-height: 1064px;
+        }
         nav {
             background: linear-gradient(black, black);
             padding: 1em;
@@ -85,8 +93,13 @@ body {
                     flex-direction: column;
                     display: flex;
                     .trHeader {
-                        display: flex !important;
                         margin-bottom: 1em;
+                        @media screen and (max-width: $break-small) {
+                            display: none;
+                        }
+                        @media screen and (min-width: $break-large) {
+                            display: flex;
+                        }
                         th {
                             box-shadow: $standar-box-shadow;
                             flex: 2;
@@ -101,30 +114,53 @@ body {
                         }
                     }
                     .rowTr {
-                        display: flex !important;
+                        display: flex;
                         box-shadow: $standar-box-shadow;
                         margin: 10px;
-                        //max-height: 200px !important;
-                        min-height: 200px !important;
+                        min-height: 200px;
                         flex-wrap: wrap;
+                        @media screen and (max-width: $break-small) {
+                            flex-direction: column-reverse
+                        }
+                        @media screen and (min-width: $break-large) {
+                            flex-direction: row
+                        }
                         td {
-                            flex: 2 ;
+                            flex: 2;
                             margin: 0 13px;
                             justify-content: center;
                             align-items: center;
-                            display: flex !important;
                             flex-direction: column;
                             img {
+                                @media screen and (max-width: $break-small) {
+                                    display: none;
+                                }
+                                @media screen and (min-width: $break-large) {
+                                    display: flex;
+                                }
                                 width: 45%;
                             }
                         }
                         td:nth-child(2) {
                             flex: 1;
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                            @media screen and (min-width: $break-large) {
+                                display: flex;
+                            }
                         }
                         td:nth-child(3) {
                             flex: 3;
                         }
-                        
+                        td:nth-child(4) {
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                            @media screen and (min-width: $break-large) {
+                                display: flex;
+                            }
+                        }
                         .progressLoad {
                             flex: 5 !important;
                             padding: 2em !important;
@@ -139,5 +175,4 @@ body {
             display: flex;
         }
     }
-} 
-
+}

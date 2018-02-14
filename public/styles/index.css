@@ -230,6 +230,14 @@ body {
   body #page {
     background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
     position: relative; }
+    @media screen and (max-width: 450px) {
+      html #page,
+      body #page {
+        min-height: 1112px; } }
+    @media screen and (min-width: 600px) {
+      html #page,
+      body #page {
+        min-height: 1064px; } }
     html #page nav,
     body #page nav {
       background: linear-gradient(black, black);
@@ -262,8 +270,15 @@ body {
           display: flex; }
           html #page .app-content table tbody .trHeader,
           body #page .app-content table tbody .trHeader {
-            display: flex !important;
             margin-bottom: 1em; }
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .trHeader,
+              body #page .app-content table tbody .trHeader {
+                display: none; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .trHeader,
+              body #page .app-content table tbody .trHeader {
+                display: flex; } }
             html #page .app-content table tbody .trHeader th,
             body #page .app-content table tbody .trHeader th {
               box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -278,28 +293,59 @@ body {
               flex: 3; }
           html #page .app-content table tbody .rowTr,
           body #page .app-content table tbody .rowTr {
-            display: flex !important;
+            display: flex;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
             margin: 10px;
-            min-height: 200px !important;
+            min-height: 200px;
             flex-wrap: wrap; }
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .rowTr,
+              body #page .app-content table tbody .rowTr {
+                flex-direction: column-reverse; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .rowTr,
+              body #page .app-content table tbody .rowTr {
+                flex-direction: row; } }
             html #page .app-content table tbody .rowTr td,
             body #page .app-content table tbody .rowTr td {
               flex: 2;
               margin: 0 13px;
               justify-content: center;
               align-items: center;
-              display: flex !important;
               flex-direction: column; }
               html #page .app-content table tbody .rowTr td img,
               body #page .app-content table tbody .rowTr td img {
                 width: 45%; }
+                @media screen and (max-width: 450px) {
+                  html #page .app-content table tbody .rowTr td img,
+                  body #page .app-content table tbody .rowTr td img {
+                    display: none; } }
+                @media screen and (min-width: 600px) {
+                  html #page .app-content table tbody .rowTr td img,
+                  body #page .app-content table tbody .rowTr td img {
+                    display: flex; } }
             html #page .app-content table tbody .rowTr td:nth-child(2),
             body #page .app-content table tbody .rowTr td:nth-child(2) {
               flex: 1; }
+              @media screen and (max-width: 450px) {
+                html #page .app-content table tbody .rowTr td:nth-child(2),
+                body #page .app-content table tbody .rowTr td:nth-child(2) {
+                  display: none; } }
+              @media screen and (min-width: 600px) {
+                html #page .app-content table tbody .rowTr td:nth-child(2),
+                body #page .app-content table tbody .rowTr td:nth-child(2) {
+                  display: flex; } }
             html #page .app-content table tbody .rowTr td:nth-child(3),
             body #page .app-content table tbody .rowTr td:nth-child(3) {
               flex: 3; }
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .rowTr td:nth-child(4),
+              body #page .app-content table tbody .rowTr td:nth-child(4) {
+                display: none; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .rowTr td:nth-child(4),
+              body #page .app-content table tbody .rowTr td:nth-child(4) {
+                display: flex; } }
             html #page .app-content table tbody .rowTr .progressLoad,
             body #page .app-content table tbody .rowTr .progressLoad {
               flex: 5 !important;
