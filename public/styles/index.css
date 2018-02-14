@@ -242,31 +242,9 @@ body {
       html #page nav .navbar-text,
       body #page nav .navbar-text {
         color: white; }
-    html #page .contain-header,
-    body #page .contain-header {
-      display: flex;
-      flex-direction: column;
+    html #page .contain-input-search,
+    body #page .contain-input-search {
       padding: 2em; }
-      html #page .contain-header ul,
-      body #page .contain-header ul {
-        padding: 0;
-        display: flex; }
-        html #page .contain-header ul li,
-        body #page .contain-header ul li {
-          list-style: none;
-          padding: 1em;
-          flex: 1;
-          margin: 1em;
-          background: white; }
-          html #page .contain-header ul li h1,
-          body #page .contain-header ul li h1 {
-            font-size: 1.5em; }
-          html #page .contain-header ul li h2,
-          body #page .contain-header ul li h2 {
-            font-size: 1em; }
-      html #page .contain-header .header-grafica,
-      body #page .contain-header .header-grafica {
-        min-height: 100px; }
     html #page .app-content,
     body #page .app-content {
       display: flex;
@@ -284,34 +262,41 @@ body {
           display: flex; }
           html #page .app-content table tbody .trHeader,
           body #page .app-content table tbody .trHeader {
-            display: flex;
+            display: flex !important;
             margin-bottom: 1em; }
             html #page .app-content table tbody .trHeader th,
             body #page .app-content table tbody .trHeader th {
               box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-              flex: 1;
+              flex: 2;
               padding: 10px;
               margin: 3px; }
+            html #page .app-content table tbody .trHeader th:nth-child(2),
+            body #page .app-content table tbody .trHeader th:nth-child(2) {
+              flex: 1; }
             html #page .app-content table tbody .trHeader th:nth-child(3),
             body #page .app-content table tbody .trHeader th:nth-child(3) {
               flex: 3; }
           html #page .app-content table tbody .rowTr,
           body #page .app-content table tbody .rowTr {
-            display: flex;
+            display: flex !important;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
             margin: 10px;
+            min-height: 200px !important;
             flex-wrap: wrap; }
             html #page .app-content table tbody .rowTr td,
             body #page .app-content table tbody .rowTr td {
-              flex: 1;
+              flex: 2;
               margin: 0 13px;
               justify-content: center;
               align-items: center;
-              display: flex;
+              display: flex !important;
               flex-direction: column; }
               html #page .app-content table tbody .rowTr td img,
               body #page .app-content table tbody .rowTr td img {
                 width: 45%; }
+            html #page .app-content table tbody .rowTr td:nth-child(2),
+            body #page .app-content table tbody .rowTr td:nth-child(2) {
+              flex: 1; }
             html #page .app-content table tbody .rowTr td:nth-child(3),
             body #page .app-content table tbody .rowTr td:nth-child(3) {
               flex: 3; }
@@ -319,10 +304,10 @@ body {
             body #page .app-content table tbody .rowTr .progressLoad {
               flex: 5 !important;
               padding: 2em !important;
-              margin: 4em !important; }
+              margin: 0 56px !important; }
     html #page .template-rowIcon,
     body #page .template-rowIcon {
-      height: 150px;
+      height: 100px;
       display: flex; }
 
 /*# sourceMappingURL=index.css.map */

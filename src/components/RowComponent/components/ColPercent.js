@@ -6,7 +6,7 @@ function ColPercent(props){
         return(
            // props.percentValue.length < 1 ? <td>Loading ...</td>  : (props.percentValue[0].open)/(props.percentValue[0].close) === (props.percentValue[2].open)/(props.percentValue[2].close) ? <td>igual</td> : (props.percentValue[0].open)/(props.percentValue[0].close) > 1 ? <td>Sube</td> : <td>igual</td>
 
-            props.percentValue.length < 1 ? <td>Loading ...</td>  :   (props.percentValue[2].close)/(props.percentValue[0].close)  === 1 ? <td>igual</td> : (props.percentValue[2].close)/(props.percentValue[0].close) > 1 ? <td>Sube</td> : <td>Baja</td>
+            props.percentValue.length < 1 ? <td>Loading ...</td>  :   (props.percentValue[2].close)/(props.percentValue[0].close)  === 1 ? <td className= 'd-none d-sm-block'>igual</td> : (props.percentValue[2].close)/(props.percentValue[0].close) > 1 ? <td className= 'd-none d-sm-block'>Sube</td> : <td className= 'd-none d-sm-block'>Baja</td>
         )
     
 }

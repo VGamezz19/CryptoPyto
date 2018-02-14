@@ -41,7 +41,7 @@ class App extends Component {
           <table>
             <tbody>
 
-              <tr className='trHeader'>
+              <tr className='trHeader d-none d-sm-block'>
                 <th>COINS</th>
                 <th>PRICE</th>
                 <th>7D CHART (USD)</th>

@@ -69,31 +69,8 @@ body {
                 color: white;
             }
         }
-        .contain-header {
-            display: flex;
-            flex-direction: column;
+        .contain-input-search {
             padding: 2em;
-            ul {
-                padding: 0;
-                display: flex;
-                li {
-                    h1 {
-                        font-size: 1.5em;
-                    }
-                    h2 {
-                        font-size: 1em;
-                    }
-                    list-style: none;
-                    padding: 1em;
-                    flex: 1;
-                    margin: 1em;
-                    background: white;
-                }
-                
-            }
-            .header-grafica {
-                min-height: 100px;
-            }
         }
         .app-content {
             display: flex;
@@ -108,33 +85,41 @@ body {
                     flex-direction: column;
                     display: flex;
                     .trHeader {
-                        display: flex;
+                        display: flex !important;
                         margin-bottom: 1em;
                         th {
                             box-shadow: $standar-box-shadow;
-                            flex: 1;
+                            flex: 2;
                             padding: 10px;
                             margin: 3px;
+                        }
+                        th:nth-child(2) {
+                            flex: 1;
                         }
                         th:nth-child(3) {
                             flex: 3;
                         }
                     }
                     .rowTr {
-                        display: flex;
+                        display: flex !important;
                         box-shadow: $standar-box-shadow;
                         margin: 10px;
+                        //max-height: 200px !important;
+                        min-height: 200px !important;
                         flex-wrap: wrap;
                         td {
-                            flex: 1;
+                            flex: 2 ;
                             margin: 0 13px;
                             justify-content: center;
                             align-items: center;
-                            display: flex;
+                            display: flex !important;
                             flex-direction: column;
                             img {
                                 width: 45%;
                             }
+                        }
+                        td:nth-child(2) {
+                            flex: 1;
                         }
                         td:nth-child(3) {
                             flex: 3;
@@ -143,14 +128,14 @@ body {
                         .progressLoad {
                             flex: 5 !important;
                             padding: 2em !important;
-                            margin: 4em !important;
+                            margin: 0 56px !important;
                         }
                     }
                 }
             }
         }
         .template-rowIcon {
-            height: 150px;
+            height: 100px;
             display: flex;
         }
     }
