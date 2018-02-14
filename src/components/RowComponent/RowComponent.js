@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import cryptoApi from './API-Cli/cryptoApi.';
 import cryptoApi from '../../API-Cli/cryptoApi'
 import ColChart from './components/ColChart'
 import ColName from './components/ColName'

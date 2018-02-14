@@ -1,6 +1,7 @@
 @import 'arrowIcon';
 @import 'loader';
 @import 'animationsComponents';
+@import 'loaderNietos';
 html,
 body {
     font-family: 'Cutive Mono', monospace !important;
@@ -139,9 +140,8 @@ body {
                             flex: 3;
                         }
                         
-                        .progress {
+                        .progressLoad {
                             flex: 5 !important;
-                            align-self: center !important;
                             padding: 2em !important;
                             margin: 4em !important;
                         }
