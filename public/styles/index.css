@@ -254,6 +254,12 @@ body {
             html #page .app-content table tbody .rowTr td:nth-child(3),
             body #page .app-content table tbody .rowTr td:nth-child(3) {
               flex: 3; }
+            html #page .app-content table tbody .rowTr .progress,
+            body #page .app-content table tbody .rowTr .progress {
+              flex: 5 !important;
+              align-self: center !important;
+              padding: 2em !important;
+              margin: 4em !important; }
     html #page .template-rowIcon,
     body #page .template-rowIcon {
       height: 150px;

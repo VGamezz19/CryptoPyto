@@ -138,6 +138,13 @@ body {
                         td:nth-child(3) {
                             flex: 3;
                         }
+                        
+                        .progress {
+                            flex: 5 !important;
+                            align-self: center !important;
+                            padding: 2em !important;
+                            margin: 4em !important;
+                        }
                     }
                 }
             }
@@ -148,3 +155,4 @@ body {
         }
     }
 } 
+
