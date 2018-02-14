@@ -20,9 +20,10 @@ class RowComponent extends Component {
     componentDidMount = () => {
         cryptoApi.getCoinHistorical(this.props.dataCoin.symbol)
             .then(res => this.setState(prevState => {
+               let data = res.Data.reverse()
                 return {
-                    historicalCoin: res.Data.concat(prevState.historicalCoin),
-                    chartCloseData: res.Data.map(el => el.close)
+                    historicalCoin: data,
+                    chartCloseData: data.map(el => el.close)
                 }
             }))
 
@@ -30,7 +31,7 @@ class RowComponent extends Component {
             cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
                 .then(res => this.setState(prevState => {
                     return {
-                        historicalCoin: res.Data.concat(prevState.historicalCoin),
+                        historicalCoin: prevState.historicalCoin.concat(res.Data),
                         chartCloseData: [...prevState.chartCloseData, res.Data[0].close]
                     }
                 }))
@@ -38,6 +39,7 @@ class RowComponent extends Component {
     }
 
     render() {
+        
         if (this.state.chartCloseData.length < 1) {
             return (
                 <tr className='rowTr'>
