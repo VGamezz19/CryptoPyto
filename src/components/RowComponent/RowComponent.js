@@ -42,10 +42,10 @@ class RowComponent extends Component {
              .then(res => this.setState(prevState => {
                 return {
                    historicalCoin: res.Data.concat( prevState.historicalCoin ),
-                   chartCloseData: [res.Data[0].close, ...prevState.chartCloseData]
+                   chartCloseData: [ ...prevState.chartCloseData, res.Data[0].close]
                 }
             }))
-         }, 5000)
+         }, 15000)
     }
 
     // componentWillReceiveProps(newprops) {
@@ -64,7 +64,7 @@ class RowComponent extends Component {
             <tr className='rowTr'>
                 <ColName nameValue={this.props.dataCoin} />
                 <ColPrice priceValue={this.state.historicalCoin} />
-                <ColChart chartValue={this.state.historicalCoin} />
+                <ColChart chartValue={this.state.chartCloseData} />
                 <ColPercent percentValue={this.state.historicalCoin} />
             </tr>
         )

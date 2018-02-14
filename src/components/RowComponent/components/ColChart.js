@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import C3Chart from 'react-c3js';
+import 'c3/c3.css';
 function ColChart(props){
 /*<td><img style={{width: '70%'}} src="./img/graficaDesign.png" alt="chart" /></td>*/
-/*const data = {
+console.log(props)
+const data = {
     columns: [
-      this.state.chartData
+      ['coin', ...props.chartValue]
     ]
   };
-  <C3Chart data={data} />
-  */
+  
+
     console.log(props)
         return(
-             <td>Char</td>
+             <td><C3Chart data={data} size={{height:200}}/></td>
         )
     
 }
