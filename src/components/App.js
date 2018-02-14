@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cryptoApi from '../API-Cli/cryptoApi.js';
 import C3Chart from 'react-c3js';
 import RowComponent from './RowComponent/RowComponent'
+import Loader from './Loader/Loader'
 
 class App extends Component {
   constructor() {
@@ -20,19 +21,19 @@ class App extends Component {
   }
 
   // Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
-  componentDidMount = () => {
-    //console.log("YaDidMount")
-    setInterval(() => {
-      cryptoApi.getCoins()
-        .then(res => this.setState({ arrayResult: res }))
-    }, 50000);
-  }
+  // componentDidMount = () => {
+  //   //console.log("YaDidMount")
+  //   setInterval(() => {
+  //     cryptoApi.getCoins()
+  //       .then(res => this.setState({ arrayResult: res }))
+  //   }, 50000);
+  // }
 
   //res => this.setState({arrayResult:res})
 
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.interval)
+  // }
 
   componentWillUpdate(nextProps, nextState) {
     //console.log("UpdateadoComponent")
@@ -71,24 +72,26 @@ class App extends Component {
         </p>
         <C3Chart data={data} />
       </div>*/
-      <section className='app-content' id='roow'>
-        <table>
-          <tbody>
 
-            <tr className='trHeader'>
-              <th>COINS</th>
-              <th>PRICE</th>
-              <th>7D CHART (USD)</th>
-              <th>CHG. 24H</th>
-            </tr>
-            <RowComponent />
-            <RowComponent />
-            <RowComponent />
+      // <section className='app-content' id='roow'>
+      //   <table>
+      //     <tbody>
 
-          </tbody>
-        </table>
-      </section>
-    );
+      //       <tr className='trHeader'>
+      //         <th>COINS</th>
+      //         <th>PRICE</th>
+      //         <th>7D CHART (USD)</th>
+      //         <th>CHG. 24H</th>
+      //       </tr>
+      //       <RowComponent />
+      //       <RowComponent />
+      //       <RowComponent />
+
+      //     </tbody>
+      //   </table>
+      // </section>
+      <Loader/> 
+       );
   }
 }
 
