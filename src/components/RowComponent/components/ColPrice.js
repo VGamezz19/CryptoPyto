@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-class ColPrice extends Component{
-    render(){
-        return(
-            <td>$8.234,55</td>
-        )
-    }
+function ColPrice(props) {
+    console.log(props)
+    return (
+        props.priceValue.length < 1 ? <td>Loading... </td> : (props.priceValue[0].close - props.priceValue[2].close) === 0 ? <td>Igual</td> : (props.priceValue[0].close - props.priceValue[2].close) > 0 ?<td>Baja </td>:<td>Sube </td>
+    )
 }
+
 export default ColPrice

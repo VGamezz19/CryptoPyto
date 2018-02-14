@@ -5,17 +5,22 @@ class CryptoApi {
         return  fetch(path)
                 .then(res => res.json())
     }
-    getCoins = ()=>  {
+
+    getCoins = () =>  {
         let url = "https://api.coinmarketcap.com/v1/ticker"
-        return this.call(this.proxyurl + url)
+        return this.call(this.proxyurl + url).then(res => {
+            return res.filter(e => e.name !== 'IOTA')
+        })
     }
-    getConiHistorical = (coin = false) => {
-        if(!coin) throw new Error ('getHistorical(...) <-- need coin to search...')
+
+    getCoinHistorical = (coin = false) => {
+        if(!coin) throw new Error ('getCoinHistorical(...) <-- need coin to search...')
         let url = `https://min-api.cryptocompare.com/data/histominute?fsym=${coin}&tsym=EUR&limit=20&aggregate=3&e=CCCAGG`
         return this.call(this.proxyurl + url)
     }
-    getConiLastHistory = (coin = false) => {
-        if(!coin) throw new Error ('getHistorical(...) <-- need coin to search...')
+
+    getCoinLastHistory = (coin = false) => {
+        if(!coin) throw new Error ('getCoinLastHistory(...) <-- need coin to search...')
         let url = `https://min-api.cryptocompare.com/data/histominute?fsym=${coin}&tsym=EUR&limit=0&aggregate=3&e=CCCAGG`
         return this.call(this.proxyurl + url)
     }
