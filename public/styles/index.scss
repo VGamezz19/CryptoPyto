@@ -116,7 +116,6 @@ body {
                     .rowTr {
                         display: flex;
                         box-shadow: $standar-box-shadow;
-                        margin: 10px;
                         min-height: 200px;
                         flex-wrap: wrap;
                         @media screen and (max-width: $break-small) {
@@ -131,12 +130,13 @@ body {
                             justify-content: center;
                             align-items: center;
                             flex-direction: column;
+                            display: flex;
                             img {
                                 @media screen and (max-width: $break-small) {
                                     display: none;
                                 }
                                 @media screen and (min-width: $break-large) {
-                                    display: flex;
+                                    display: initial;
                                 }
                                 width: 45%;
                             }
@@ -162,7 +162,7 @@ body {
                             }
                         }
                         .progressLoad {
-                            flex: 5 !important;
+                            flex: 6 !important;
                             padding: 2em !important;
                             margin: 0 56px !important;
                         }
