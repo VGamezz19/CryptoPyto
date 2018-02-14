@@ -20,29 +20,38 @@ class App extends Component {
   }
 
   // Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
-  componentDidMount = () => {
-    //console.log("YaDidMount")
-    setInterval(() => {
-      cryptoApi.getCoins()
-        .then(res => this.setState({ arrayResult: res }))
-    }, 50000);
-  }
+  // componentDidMount = () => {
+  //   //console.log("YaDidMount")
+  //   setInterval(() => {
+  //     cryptoApi.getCoins()
+  //       .then(res => this.setState({ arrayResult: res }))
+  //   }, 50000);
+  // }
 
   //res => this.setState({arrayResult:res})
 
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.interval)
+  // }
 
-  componentWillUpdate(nextProps, nextState) {
-    //console.log("UpdateadoComponent")
+  // componentWillUpdate(nextProps, nextState) {
+  //   //console.log("UpdateadoComponent")
 
-    this.setState((prevState) => {
-      chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
-      console.log(nextState.arrayResult[0].price_usd)
-    })
-  }
+  //   this.setState((prevState) => {
+  //     chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
+  //     console.log(nextState.arrayResult[0].price_usd)
+  //   })
+  // }
+  /*template = () =>{
+    if(this.state.arrayResult){
+      let templateCom = ''
+      for(let i = 0; i <3; i++) templateCom += <RowComponent />
 
+      return templateCom
+    }
+    return "Loading..."
+   }
+*/
 
   render() {
     //console.log(this.state)
@@ -52,25 +61,23 @@ class App extends Component {
         this.state.chartData
       ]
     };
-    //console.log(data)
 
 
-    /*this.state.arrayResult.map((cash)=>{
-      console.log(cash)
-    })*/
 
     //console.log("Hola",this.state.arrayResult[0])// me devuelve el primer objeto del array {id:bitcoin,:price_usd:300}
+    /*<div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to React</h1>
+      </header>
+      <p className="App-intro">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </p>
+      <C3Chart data={data} />
+    </div>*/
+
+
     return (
-      /*<div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <C3Chart data={data} />
-      </div>*/
       <section className='app-content' id='roow'>
         <table>
           <tbody>
@@ -81,10 +88,10 @@ class App extends Component {
               <th>7D CHART (USD)</th>
               <th>CHG. 24H</th>
             </tr>
-            <RowComponent />
-            <RowComponent />
-            <RowComponent />
-
+            <RowComponent dataCoin = {this.state.arrayResult[0]} />
+            {console.log(this.state.arrayResult[0])}
+            
+      
           </tbody>
         </table>
       </section>

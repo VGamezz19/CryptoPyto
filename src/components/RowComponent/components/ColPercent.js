@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-class ColPercent extends Component{
-    render(){
+function ColPercent(props){
         return(
-            <td>-1.09%</td>
+            <td>{props.percentValue.percent_change_1h}</td>
         )
-    }
+    
 }
 export default ColPercent

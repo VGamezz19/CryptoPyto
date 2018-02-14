@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-class ColChart extends Component{
-    render(){
+function ColChart(props){
+/*<td><img style={{width: '70%'}} src="./img/graficaDesign.png" alt="chart" /></td>*/
         return(
-            <td><img style={{width: '70%'}} src="./img/graficaDesign.png" alt="chart" /></td>
+             <td>{props.chartValue.price_usd}</td>
         )
-    }
+    
 }
 export default ColChart

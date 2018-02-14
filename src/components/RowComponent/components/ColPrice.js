@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-class ColPrice extends Component{
-    render(){
+function ColPrice(props){
+
         return(
-            <td>$8.234,55</td>
+            <td>{props.priceValue.price_usd}</td>
         )
-    }
 }
+
 export default ColPrice
