@@ -88,10 +88,7 @@ class App extends Component {
               <th>7D CHART (USD)</th>
               <th>CHG. 24H</th>
             </tr>
-            <RowComponent dataCoin = {this.state.arrayResult[0]} />
-            {console.log(this.state.arrayResult[0])}
-            
-      
+            {this.state.arrayResult.length < 1 ? "Loading ..." : <RowComponent dataCoin = {this.state.arrayResult[0]} />}
           </tbody>
         </table>
       </section>
