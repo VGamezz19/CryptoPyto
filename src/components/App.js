@@ -8,90 +8,58 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      arrayResult: [],
-      chartData: []
+      dataCoins : [],
+      coinsShow: [],
+      lengthCoin: 2
     }
   }
 
-  // Antes del renderizado nos traemos los datos
-  componentWillMount = () => {
-    //console.log("WillMount")
-    cryptoApi.getCoins()
-      .then(res => this.setState({ arrayResult: res }))
+  componentDidMount = () => cryptoApi.getCoins()
+                                              .then(res => this.setState({dataCoins : res}))
+                                              .then(res => this.setState({
+                                                coinsShow: this.state.dataCoins.filter((coin, index) => index <= this.state.lengthCoin)
+                                              }))
+  
+
+  componentWillReceiveProps(newProps) {
+    this.setState({lengthCoin:newProps.moreCoins})
   }
 
-  // Para obtener un flujo de datos a tiempo real necesitamos realizar la petición a la API cada x segundos
-  // componentDidMount = () => {
-  //   //console.log("YaDidMount")
-  //   setInterval(() => {
-  //     cryptoApi.getCoins()
-  //       .then(res => this.setState({ arrayResult: res }))
-  //   }, 50000);
+  // componentDidUpdate(nextProps, nextState){
+  //   console.log(nextState)
+
   // }
 
-  //res => this.setState({arrayResult:res})
+  // componentWillUpdate(nextProps, nextState) {
+  //   //console.log("UpdateadoComponent")
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval)
+  //   this.setState((prevState) => {
+  //     chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
+  //     console.log(nextState.arrayResult[0].price_usd)
+  //   })
   // }
-
-  componentWillUpdate(nextProps, nextState) {
-    //console.log("UpdateadoComponent")
-
-    this.setState((prevState) => {
-      chartData: prevState.chartData.push(prevState.arrayResult[0].price_usd)
-      console.log(nextState.arrayResult[0].price_usd)
-    })
-  }
-
 
   render() {
-    //console.log(this.state)
-    //console.log("SoyRender")
-    const data = {
-      columns: [
-        this.state.chartData
-      ]
-    };
-    //console.log(data)
 
-
-    /*this.state.arrayResult.map((cash)=>{
-      console.log(cash)
-    })*/
-
-    //console.log("Hola",this.state.arrayResult[0])// me devuelve el primer objeto del array {id:bitcoin,:price_usd:300}
+    console.log(this.state)
     return (
-      /*<div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <C3Chart data={data} />
-      </div>*/
 
-      // <section className='app-content' id='roow'>
-      //   <table>
-      //     <tbody>
+      <section className='app-content' id='roow'>
+        <table>
+          <tbody>
 
-      //       <tr className='trHeader'>
-      //         <th>COINS</th>
-      //         <th>PRICE</th>
-      //         <th>7D CHART (USD)</th>
-      //         <th>CHG. 24H</th>
-      //       </tr>
-      //       <RowComponent />
-      //       <RowComponent />
-      //       <RowComponent />
+            <tr className='trHeader'>
+              <th>COINS</th>
+              <th>PRICE</th>
+              <th>7D CHART (USD)</th>
+              <th>CHG. 24H</th>
+            </tr>
+            {this.state.coinsShow.length < 1 ? <Loader /> : this.state.coinsShow.map(coin => <RowComponent dataCoin={coin}/>) }
+          </tbody>
+        </table>
+      </section>
 
-      //     </tbody>
-      //   </table>
-      // </section>
-      <Loader/> 
-       );
+    );
   }
 }
 
