@@ -11,10 +11,9 @@ class RowComponent extends Component{
         return(
             <tr className='rowTr'>
                 <ColName/>
-                <LoaderNiesto/>
-                {/* <ColPrice/>
+                <ColPrice/>
                 <ColChart/>
-                <ColPercent/> */}
+                <ColPercent/>
             </tr>
         )
     }
