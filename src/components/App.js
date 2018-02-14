@@ -3,6 +3,7 @@ import cryptoApi from '../API-Cli/cryptoApi.js';
 import C3Chart from 'react-c3js';
 import RowComponent from './RowComponent/RowComponent'
 import Loader from './Loader/Loader'
+import IconsRow from './IconRow/IconsRow'
 
 class App extends Component {
   constructor() {
@@ -59,12 +60,9 @@ class App extends Component {
         </table>
       </section>
         <div class = 'template-rowIcon'>
-                <a class='btn-scroll-down scroll skrollable skrollable-between'></a>
+          <IconsRow/>
         </div>
       </div>
-      
-
-
     );
   }
 }
