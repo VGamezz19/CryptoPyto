@@ -28,7 +28,7 @@ export default class Search extends Component {
   onClickCoin = (coin) => {
     this.setState(prevState => ({
       inputValue: '',
-      coinSelect: prevState.coinSelect.concat(coin)
+      coinSelect:  [coin].concat(prevState.coinSelect)
     }))
   }
 
