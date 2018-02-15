@@ -3,7 +3,7 @@ import cryptoApi from '../../../API-Cli/cryptoApi'
 import ColChart from './components/ColChart'
 import ColName from './components/ColName'
 import ColPrice from './components/ColPrice'
-import ColPercent from './components/ColPercent'
+import ColChartRealTime from './components/ColChartRealTime'
 import LoaderNietos from './components/LoaderNietos'
 
 class RowComponent extends Component {
@@ -11,18 +11,25 @@ class RowComponent extends Component {
     constructor() {
         super()
         this.state = {
-            historicalCoin: [],
-            chartCloseData: []
+            chartHistory:[],// hemos creado dos estados más, este para la gráfica de historia
+            chartRealTime:[]// este estado para la grafica a tiempo real
         }
     }
 
+    
     componentDidMount = () => {
         cryptoApi.getCoinHistorical(this.props.dataCoin.symbol)
             .then(res => this.setState(prevState => {
                let data = res.Data.reverse()
                 return {
-                    historicalCoin: data,
-                    chartCloseData: data.map(el => el.close)
+                    chartHistory: data.map(el => el.close)
+                }
+            }))
+
+            cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
+            .then(res => this.setState(prevState => {
+                return {
+                    chartRealTime:[...prevState.chartRealTime, res.Data[0].close]
                 }
             }))
 
@@ -30,8 +37,7 @@ class RowComponent extends Component {
             cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
                 .then(res => this.setState(prevState => {
                     return {
-                        historicalCoin: prevState.historicalCoin.concat(res.Data),
-                        chartCloseData: [...prevState.chartCloseData, res.Data[0].close]
+                        chartRealTime:[...prevState.chartRealTime, res.Data[0].close]
                     }
                 }))
         }, 15000)
@@ -39,7 +45,7 @@ class RowComponent extends Component {
 
     render() {
         
-        if (this.state.chartCloseData.length < 1) {
+        if (this.props.dataCoin.length < 1) {
             return (
                 <tr className='rowTr'>
                     <ColName nameValue={this.props.dataCoin} />
@@ -51,9 +57,9 @@ class RowComponent extends Component {
         return (
             <tr className='rowTr'>
                 <ColName nameValue={this.props.dataCoin} />
-                <ColPrice priceValue={this.state.historicalCoin} />
-                <ColChart chartValue={this.state.chartCloseData} />
-                <ColPercent percentValue={this.state.historicalCoin} />
+                <ColPrice priceValue={this.state.chartRealTime} />
+                <ColChart chartValueHistorical={this.state.chartHistory} />
+                <ColChartRealTime chartValueRealTime={this.state.chartRealTime} />
             </tr>
         )
     }
