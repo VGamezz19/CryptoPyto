@@ -79,6 +79,46 @@ body {
         }
         .contain-input-search {
             padding: 2em;
+            display: flex;
+            flex-direction: column;
+            .app-content {
+                margin-top: 1em;
+                min-height: 0 !important;
+            }
+            .search-input {
+                display: flex;
+                height: 3.4em;
+                flex: 1;
+                input {
+                    flex: 1
+                }
+            }
+            .contain-select {
+                background: white;
+                max-height: 250px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1em;
+                overflow: scroll;
+                .coins {
+                    cursor: pointer;
+                    flex: 1;
+                    align-items: center;
+                    padding: 1em;
+                    border-bottom: 1px solid gray;
+                    justify-content: center;
+                    img {
+                        float: left;
+                        flex: 1;
+                        height: 50px;
+                    }
+                    h1 {
+                        float: left;
+                        flex: 8;
+                        text-align: center;
+                    }
+                }
+            }
         }
         .app-content {
             display: flex;

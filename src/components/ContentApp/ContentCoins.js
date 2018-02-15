@@ -27,7 +27,7 @@ class ContentCoins extends Component {
                 transitionName="example"
                 transitionEnterTimeout={500}
                 transitionLeaveTimeout={300}>
-                {this.props.coinsShow.length < 1 ? <Loader /> : this.props.coinsShow.map(coin => <RowComponent dataCoin={coin} />)}
+                {this.props.coinsShow.length < 1 ? <Loader /> : this.props.coinsShow.map(coin => <RowComponent dataCoin={coin}  key={coin.id}/>)}
               </CSSTransitionGroup>
             </tbody>
           </table>

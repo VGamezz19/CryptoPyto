@@ -252,7 +252,47 @@ body {
         color: white; }
     html #page .contain-input-search,
     body #page .contain-input-search {
-      padding: 2em; }
+      padding: 2em;
+      display: flex;
+      flex-direction: column; }
+      html #page .contain-input-search .app-content,
+      body #page .contain-input-search .app-content {
+        margin-top: 1em;
+        min-height: 0 !important; }
+      html #page .contain-input-search .search-input,
+      body #page .contain-input-search .search-input {
+        display: flex;
+        height: 3.4em;
+        flex: 1; }
+        html #page .contain-input-search .search-input input,
+        body #page .contain-input-search .search-input input {
+          flex: 1; }
+      html #page .contain-input-search .contain-select,
+      body #page .contain-input-search .contain-select {
+        background: white;
+        max-height: 250px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+        overflow: scroll; }
+        html #page .contain-input-search .contain-select .coins,
+        body #page .contain-input-search .contain-select .coins {
+          cursor: pointer;
+          flex: 1;
+          align-items: center;
+          padding: 1em;
+          border-bottom: 1px solid gray;
+          justify-content: center; }
+          html #page .contain-input-search .contain-select .coins img,
+          body #page .contain-input-search .contain-select .coins img {
+            float: left;
+            flex: 1;
+            height: 50px; }
+          html #page .contain-input-search .contain-select .coins h1,
+          body #page .contain-input-search .contain-select .coins h1 {
+            float: left;
+            flex: 8;
+            text-align: center; }
     html #page .app-content,
     body #page .app-content {
       display: flex;
