@@ -48,11 +48,7 @@ class RowComponent extends Component {
         
     }
 
-
-
     render() {
-        console.log(this.state.chartRealTime)
-
         if (this.state.chartHistory.length < 1) {
             return (
                 <tr className='rowTr'>
