@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 function ColPrice(props) {
     console.log(props.priceValue)
     return (
-        props.priceValue.length < 1 ? <td>Loading... </td> : (props.priceValue[0].close - props.priceValue[2].close) === 0 ? <td> {props.priceValue[0].close} Igual</td> : (props.priceValue[0].close - props.priceValue[2].close) > 0 ?<td> {props.priceValue[0].close} Baja </td>:<td> {props.priceValue[0].close} Sube </td>
+        props.priceValue.length < 2 ? <td>{props.priceValue[0]}</td> : (props.priceValue[0] - props.priceValue[1]) === 0 ? <td> {props.priceValue[0]} Igual</td> : (props.priceValue[0] - props.priceValue[1]) > 0 ?<td> {props.priceValue[0]} Baja </td>:<td> {props.priceValue[0]} Sube </td>
 
     )
 }
