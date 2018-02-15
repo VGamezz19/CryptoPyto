@@ -8,9 +8,7 @@ class CryptoApi {
 
     getCoins = () =>  {
         let url = "https://api.coinmarketcap.com/v1/ticker"
-        return this.call(this.proxyurl + url).then(res => {
-            return res.filter(e => e.name !== 'IOTA')
-        })
+        return this.call(this.proxyurl + url)
     }
 
     getCoinHistorical = (coin = false) => {
