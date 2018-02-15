@@ -13,7 +13,17 @@ const data = {
 
    
         return(
-             <td><C3Chart data={data} size={{height:200}}/></td>
+          <td ><C3Chart 
+          axis= {{
+           y: {
+             show: true,
+             tick: {
+              fit: true
+            }
+           }
+        
+         }}
+         data={data} size={{height:200}}/></td>
         )
     
 }

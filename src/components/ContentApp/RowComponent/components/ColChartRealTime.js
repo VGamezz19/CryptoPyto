@@ -13,7 +13,7 @@ const data = {
 
    
         return(
-             <td><C3Chart data={data} size={{height:200}}/></td>
+             <td class ='char-real'><C3Chart data={data} size={{height:200}}/></td>
         )
     
 }
