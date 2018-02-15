@@ -2,8 +2,10 @@
 @import 'loader';
 @import 'animationsComponents';
 @import 'loaderNietos';
+
 $break-small: 450px;
 $break-large: 600px;
+
 html,
 body {
     font-family: 'Cutive Mono', monospace !important;
@@ -183,6 +185,21 @@ body {
                         }
                         td:nth-child(2) {
                             flex: 1;
+                            color: white;
+                            span{
+                                padding: 0 1em !important;
+                                border-radius: 7px !important;
+                            }
+                            .down {
+                                background: brown;
+                            }
+                            .up {
+                                background: green;
+                            }
+                            .equal {
+                                color: black;
+                                background: #c9c9c9;
+                            }
                             @media screen and (max-width: $break-small) {
                                 display: none;
                             }
@@ -216,13 +233,3 @@ body {
         }
     }
 }
-
-// .char-real{
-//     .c3-chart-lines .c3-circles .c3-circle {
-//         display: none !important;
-//     }
-// }
-
-// .tick {
-//     display: none !important;
-//   }

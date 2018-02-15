@@ -11,7 +11,8 @@ class RowComponent extends Component {
         super()
         this.state = {
             chartHistory: [],// hemos creado dos estados más, este para la gráfica de historia
-            chartRealTime: []// este estado para la grafica a tiempo real
+            chartRealTime: [],// este estado para la grafica a tiempo real
+            priceRealTime:[]
         }
     }
 
@@ -36,13 +37,15 @@ class RowComponent extends Component {
                     cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
                         .then(res => this.setState(prevState => {
                             return {
-                                chartRealTime: [...prevState.chartRealTime, res.Data[0].close]
+                                chartRealTime: [...prevState.chartRealTime, res.Data[0].close],
+                                priceRealTime: [res.Data[0].close, ...prevState.priceRealTime]
                             }
                         }))
                 }, 15000)
 
                 return {
-                    chartRealTime: [...prevState.chartRealTime, res.Data[0].close]
+                    chartRealTime: [...prevState.chartRealTime, res.Data[0].close],
+                    priceRealTime: [res.Data[0].close, ...prevState.priceRealTime]
                 }
             }))
         
@@ -70,7 +73,7 @@ class RowComponent extends Component {
         return (
             <tr className='rowTr'>
                 <ColName nameValue={this.props.dataCoin} />
-                <ColPrice priceValue={this.state.chartRealTime} />
+                <ColPrice priceValue={this.state.priceRealTime} />
                 <ColChart chartValueHistorical={this.state.chartHistory} />
                 <ColChartRealTime chartValueRealTime={this.state.chartRealTime} />
             </tr>

@@ -366,7 +366,22 @@ body {
                     display: initial; } }
             html #page .app-content table tbody .rowTr td:nth-child(2),
             body #page .app-content table tbody .rowTr td:nth-child(2) {
-              flex: 1; }
+              flex: 1;
+              color: white; }
+              html #page .app-content table tbody .rowTr td:nth-child(2) span,
+              body #page .app-content table tbody .rowTr td:nth-child(2) span {
+                padding: 0 1em !important;
+                border-radius: 7px !important; }
+              html #page .app-content table tbody .rowTr td:nth-child(2) .down,
+              body #page .app-content table tbody .rowTr td:nth-child(2) .down {
+                background: brown; }
+              html #page .app-content table tbody .rowTr td:nth-child(2) .up,
+              body #page .app-content table tbody .rowTr td:nth-child(2) .up {
+                background: green; }
+              html #page .app-content table tbody .rowTr td:nth-child(2) .equal,
+              body #page .app-content table tbody .rowTr td:nth-child(2) .equal {
+                color: black;
+                background: #c9c9c9; }
               @media screen and (max-width: 450px) {
                 html #page .app-content table tbody .rowTr td:nth-child(2),
                 body #page .app-content table tbody .rowTr td:nth-child(2) {
