@@ -9,9 +9,6 @@ const data = {
       ['coin', ...props.chartValueRealTime]
     ]
   };
-  
-
-   
         return(
              <td class ='char-real'><C3Chart data={data} size={{height:200}}/></td>
         )

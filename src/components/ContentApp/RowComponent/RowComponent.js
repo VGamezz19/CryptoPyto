@@ -15,10 +15,12 @@ class RowComponent extends Component {
         }
     }
 
-
     componentDidMount = () => {
         cryptoApi.getCoinHistorical(this.props.dataCoin.symbol)
             .then(res => this.setState(prevState => {
+                if (res.Response === 'Error') return {
+                    chartHistory: 'error'
+                }
                 let data = res.Data.reverse()
                 return {
                     chartHistory: data.map(el => el.close)
@@ -26,23 +28,30 @@ class RowComponent extends Component {
             }))
         cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
             .then(res => this.setState(prevState => {
+                if (res.Response === 'Error')return {
+                    chartHistory: 'error'
+                }
+
+                setInterval(() => {
+                    cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
+                        .then(res => this.setState(prevState => {
+                            return {
+                                chartRealTime: [...prevState.chartRealTime, res.Data[0].close]
+                            }
+                        }))
+                }, 15000)
+
                 return {
                     chartRealTime: [...prevState.chartRealTime, res.Data[0].close]
                 }
             }))
-        setInterval(() => {
-            cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
-                .then(res => this.setState(prevState => {
-                    return {
-                        chartRealTime: [...prevState.chartRealTime, res.Data[0].close]
-                    }
-                }))
-        }, 15000)
+        
     }
 
 
 
     render() {
+        console.log(this.state.chartRealTime)
 
         if (this.state.chartHistory.length < 1) {
             return (
@@ -53,7 +62,7 @@ class RowComponent extends Component {
             )
         }
 
-        if (this.state.historicalCoin == 'error') {
+        if (this.state.chartHistory == 'error') {
             return (
                 <tr className='rowTr'>
                     <ColName nameValue={this.props.dataCoin} />

@@ -19,8 +19,8 @@ class ContentCoins extends Component {
               <tr className='trHeader hidden-small-screen'>
                 <th>COINS</th>
                 <th>PRICE</th>
-                <th>7D CHART (USD)</th>
-                <th>CHG. 24H</th>
+                <th>HISTORY CHART VALUE</th>
+                <th>CHART VALUE (every 15sec)</th>
               </tr>
               
               <CSSTransitionGroup

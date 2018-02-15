@@ -9,9 +9,6 @@ const data = {
       ['coin', ...props.chartValueHistorical]
     ]
   };
-  
-
-   
         return(
           <td ><C3Chart 
           axis= {{
