@@ -368,6 +368,9 @@ body {
             body #page .app-content table tbody .rowTr td:nth-child(2) {
               flex: 1;
               color: white; }
+              html #page .app-content table tbody .rowTr td:nth-child(2) h1,
+              body #page .app-content table tbody .rowTr td:nth-child(2) h1 {
+                color: black; }
               html #page .app-content table tbody .rowTr td:nth-child(2) span,
               body #page .app-content table tbody .rowTr td:nth-child(2) span {
                 padding: 0 1em !important;
