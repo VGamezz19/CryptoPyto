@@ -14,15 +14,23 @@ class App extends Component {
       dataCoins: [],
       coinsShow: [],
       lengthCoin: 2,
-      imgbbdd:[]
+      imgbbdd: []
     }
   }
-  componentWillMount(){
-    Scroll.animateScroll.scrollToTop();
-
-    fetch('./img-bbdd.json').then(res=>res.json()).then(res=> this.setState({imgbbdd:res}))
+  componentWillMount() {
+    //Scroll.animateScroll.scrollToTop();
+    fetch('./img-bbdd.json').then(res => res.json()).then(res => this.setState({ imgbbdd: res }))
   }
   componentDidMount = () => cryptoApi.getCoins()
+    .then(res => {
+      var newArr = res.map(coin => {
+        this.state.imgbbdd.map(img => img.name === coin.name ? coin.img = img.img : '')
+        if (coin.img) return coin
+        coin.img = './img/defaulticon.png'
+        return coin
+      })
+      return newArr
+    })
     .then(res => this.setState({ dataCoins: res }))
     .then(res => this.setState({
       coinsShow: this.state.dataCoins.filter((coin, index) => index <= this.state.lengthCoin)

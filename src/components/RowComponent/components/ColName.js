@@ -3,7 +3,7 @@ function ColName(props){
     
         return(
         <td>
-            <img src={`./img/${props.nameValue.name}.png`} alt="imgcoin"/>
+            <img src={`${props.nameValue.img}`} alt="imgcoin"/>
             <h4>{props.nameValue.id}</h4>
         </td> 
         ) 
