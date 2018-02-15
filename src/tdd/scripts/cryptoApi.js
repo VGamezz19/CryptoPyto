@@ -1,3 +1,5 @@
+console.log("HOLA AMIGOS")
+
 class CryptoApi {
      proxyurl="https://cors-anywhere.herokuapp.com/"
 
@@ -24,5 +26,5 @@ class CryptoApi {
     }
 }
 const cryptoApi = new CryptoApi()
-
+console.log("Hey")
 export default  cryptoApi
