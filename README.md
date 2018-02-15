@@ -60,7 +60,7 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 
 #### Estructura de componentes React
 ![image](/Users/nachomirallessoler/Documents/App/CryptoPyto/public/img)
-Vamos a tener un total de 6 componentes, distribuidos en 1 padre, 1 hijo y 4 nietos.
+Vamos a tener un total de 7 componentes, distribuidos en 1 padre, 2 hijos y 1 nieto y 4 biznietos.
 El padre será quien contendrá toda la App, la tabla. El hijo será una fila de la tabla y los nietos serán cada una de las columnas de la fila.
 - El componente <App> será un smart component. 
 - El componente hijo <RowComponent/> será un smart component.
