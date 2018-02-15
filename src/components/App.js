@@ -13,12 +13,14 @@ class App extends Component {
     this.state = {
       dataCoins: [],
       coinsShow: [],
-      lengthCoin: 2
+      lengthCoin: 2,
+      imgbbdd:[]
     }
   }
   componentWillMount(){
-    console.log("scrollTops")
     Scroll.animateScroll.scrollToTop();
+
+    fetch('./img-bbdd.json').then(res=>res.json()).then(res=> this.setState({imgbbdd:res}))
   }
   componentDidMount = () => cryptoApi.getCoins()
     .then(res => this.setState({ dataCoins: res }))
@@ -38,6 +40,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.dataCoins)
     return (
       <div>
         <section className='app-content'>

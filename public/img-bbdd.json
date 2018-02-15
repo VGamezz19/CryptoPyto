@@ -1,0 +1,121 @@
+[{
+	"name": "Binance Coin",
+	"img": "./img/Binance Coin.png"
+
+}, {
+	"name": "Bitcoin Cash",
+	"img": "./img/Bitcoin Cash.png"
+
+},{
+	"name": "Bitcoin Gold",
+	"img": "./img/Bitcoin Gold.png"
+
+},{
+	"name": "Bitcoin",
+	"img": "./img/Bitcoin.png"
+
+},{
+	"name": "Bytecoin",
+	"img": "./img/Bytecoin.png"
+
+},{
+	"name": "Cardano",
+	"img": "./img/Cardano.png"
+
+},{
+	"name": "Dash",
+	"img": "./img/Dash.png"
+
+},{
+	"name": "defaulticon",
+	"img": "./img/defaulticon.png"
+
+},{
+	"name": "EOS",
+	"img": "./img/EOS.png"
+
+},{
+	"name": "Ethereum classic",
+	"img": "./img/Ethereum classic.png"
+
+},{
+	"name": "Ethereum",
+	"img": "./img/Ethereum.png"
+
+},{
+	"name": "ICON",
+	"img": "./img/ICON.png"
+
+},{
+	"name": "Lisk",
+	"img": "./img/Lisk.png"
+
+},{
+	"name": "Litecoin",
+	"img": "./img/Litecoin.png"
+
+},{
+	"name": "Monero",
+	"img": "./img/Monero.png"
+
+},{
+	"name": "Nano",
+	"img": "./img/Nano.png"
+
+},{
+	"name": "NEM",
+	"img": "./img/NEM.png"
+
+},{
+	"name": "NEO",
+	"img": "./img/NEO.png"
+
+},{
+	"name": "OmiseGo",
+	"img": "./img/OmiseGo.png"
+
+},{
+	"name": "Populous",
+	"img": "./img/Populous.png"
+
+},{
+	"name": "Qtum",
+	"img": "./img/Qtum.png"
+
+},{
+	"name": "Ripple",
+	"img": "./img/Ripple.png"
+
+},{
+	"name": "Steem",
+	"img": "./img/Steem.png"
+
+},{
+	"name": "Stellar",
+	"img": "./img/Stellar.png"
+
+},{
+	"name": "Tether",
+	"img": "./img/Tether.png"
+
+},{
+	"name": "TRON",
+	"img": "./img/TRON.png"
+
+},{
+	"name": "U.CASH",
+	"img": "./img/U.CASH.png"
+
+},{
+	"name": "VeChain",
+	"img": "./img/VeChain.png"
+
+},{
+	"name": "Verge",
+	"img": "./img/Verge.png"
+
+},{
+	"name": "Zcash",
+	"img": "./img/Zcash.png"
+
+}]
