@@ -59,15 +59,25 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 
 
 #### Estructura de componentes React
-![image](/Users/nachomirallessoler/Documents/App/CryptoPyto/public/img)
-Vamos a tener un total de 7 componentes, distribuidos en 1 padre, 2 hijos y 1 nieto y 4 biznietos.
-El padre será quien contendrá toda la App, la tabla. El hijo será una fila de la tabla y los nietos serán cada una de las columnas de la fila.
-- El componente <App> será un smart component. 
-- El componente hijo <RowComponent/> será un smart component.
-- Los 4 nietos <ColName/><ColPrice><ColChartHistory><ColChartRealTime> serán functional components.
+Vamos a tener un total de 10 componentes, distribuidos jerárquicamente como se muestra en el siguiente esquema:
+![image](https://github.com/VGamezz19/CryptoPyto/tree/nachoreactdir/public/img/flow-hierarchy-components)
 
-El componente App o padre de todos los componentes será el encargado de renderizar la app y de recibir los datos de la primera llamada de la Api cryptoApi.getCoins, con todas las monedas en un array de objetos. Por lo tanto tendrá estado, el que recibe toda la información de las monedas y las muestra, dataCoins:[] y showCoins:[]
+- App será el componente principal y será el encargado de transferir la información entre sus dos subcomponentes smart: ContentCoins y Search. App realizará la primera llamada a la API, cryptoApi.getCoins, para obtener toda la información de todas las monedas y así poder transferirla a sus dos subcomponentes. App además realiza otra llamada a una API creada específicamente para mostrar los iconos de las criptomonedas.
 
-El componente hijo <RowComponent dataCoin =... /> recibirá del padre la propiedad dataCoin, que contedrá toda la información de la moneda en cuestión. Este componente tendrá la responsabilidad de hacer la segunda llamada a la API cryptoApi.getCoinHistorical, que recibirá el histórico de los últimos 20 movimientos de la moneda en cuestión. Hasta aquí la parte estática.
+- El componente Search contendrá principalmente el input que se encargará de capturar los caracteres que introduzca el usuario para realizar la búsqueda instantánea de las criptomonedas que se aproximen a la búsqueda realizada.
 
-Tras la llamada al histórico, este componente realizará también la tercera llamada a la API cryptoApi.getCoinHistorical. Esta llamada nos devolverá el último movimiento de valores de la moneda. Como se actualiza cada x minutos y su valor varía con el tiempo, esta última petición la introducimos en un setInterval, de esta manera se irán renderizando las últimas variaciones de la moneda.
+- El componente ContentCoins será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes: IconsRow, Loader y RowComponent.
+
+- El componente Loader simplemente mostrará un icono de loading mientras se va cargando la información. Será un dump component.
+
+- IconsRow es un dump component que
+
+- RowComponent será también un smart component y tendrá la responsabilidad de hacer la segunda y tercera llamadas a la API. La segunda llamada, cryptoApi.getCoinHistorical servirá para obtener el histórico de los 20 últimos movimientos de cada moneda. La tercera llamada, cryptoApi.getCoinLastHistory servirá para obtener el último valor de cada moneda, para lo cual necesitamos realizar las peticiones cada 15 segundos. Toda la información recibida de la API la utilizará el RowComponent para transferírsela a sus 4 subcomponentes dump: ColName, ColPrice, ColChartHistory y ColChartRealTime.
+
+- ColName es el componente que mostrará el nombre de la moneda. Éste se obtiene desde la primera llamada a la API en en el componente App y simplemente se va transmitiendo entre los subcomponentes hasta llegar a ColName.
+
+- ColPrice es el componente funcional encargado de mostrar el valor actual de la moneda. Se actualizará cada 15 segundos.
+
+- ColChartHistory es un componente funcional y mostrará la información de los 20 últimos valores de la moneda en forma de gráfico estático.
+
+- ColChartRealTime es también un componente funcional y mostrará en forma de gráfico dinámico el último valor de la moneda. Se actualizará cada 15 segundos igual que ColPrice.
