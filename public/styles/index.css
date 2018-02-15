@@ -49,7 +49,7 @@
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: grey;
+  background-color: #1b1e3c;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; }
@@ -118,6 +118,67 @@
   opacity: 0.01;
   transition: opacity 300ms ease-in; }
 
+.cs-loader-inner {
+  width: calc(100% - 200px);
+  color: #1b1e3c;
+  padding: 0 100px;
+  text-align: center; }
+
+.cs-loader-inner label {
+  font-size: 20px;
+  opacity: 0;
+  display: inline-block; }
+
+@keyframes lol {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px); }
+  33% {
+    opacity: 1;
+    transform: translateX(0px); }
+  66% {
+    opacity: 1;
+    transform: translateX(0px); }
+  100% {
+    opacity: 0;
+    transform: translateX(300px); } }
+@-webkit-keyframes lol {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px); }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px); }
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px); } }
+.cs-loader-inner label:nth-child(6) {
+  -webkit-animation: lol 3s infinite ease-in-out;
+  animation: lol 3s infinite ease-in-out; }
+
+.cs-loader-inner label:nth-child(5) {
+  -webkit-animation: lol 3s 100ms infinite ease-in-out;
+  animation: lol 3s 100ms infinite ease-in-out; }
+
+.cs-loader-inner label:nth-child(4) {
+  -webkit-animation: lol 3s 200ms infinite ease-in-out;
+  animation: lol 3s 200ms infinite ease-in-out; }
+
+.cs-loader-inner label:nth-child(3) {
+  -webkit-animation: lol 3s 300ms infinite ease-in-out;
+  animation: lol 3s 300ms infinite ease-in-out; }
+
+.cs-loader-inner label:nth-child(2) {
+  -webkit-animation: lol 3s 400ms infinite ease-in-out;
+  animation: lol 3s 400ms infinite ease-in-out; }
+
+.cs-loader-inner label:nth-child(1) {
+  -webkit-animation: lol 3s 500ms infinite ease-in-out;
+  animation: lol 3s 500ms infinite ease-in-out; }
+
 html,
 body {
   font-family: 'Cutive Mono', monospace !important;
@@ -169,6 +230,14 @@ body {
   body #page {
     background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
     position: relative; }
+    @media screen and (max-width: 450px) {
+      html #page,
+      body #page {
+        min-height: 1112px; } }
+    @media screen and (min-width: 600px) {
+      html #page,
+      body #page {
+        min-height: 1064px; } }
     html #page nav,
     body #page nav {
       background: linear-gradient(black, black);
@@ -181,31 +250,9 @@ body {
       html #page nav .navbar-text,
       body #page nav .navbar-text {
         color: white; }
-    html #page .contain-header,
-    body #page .contain-header {
-      display: flex;
-      flex-direction: column;
+    html #page .contain-input-search,
+    body #page .contain-input-search {
       padding: 2em; }
-      html #page .contain-header ul,
-      body #page .contain-header ul {
-        padding: 0;
-        display: flex; }
-        html #page .contain-header ul li,
-        body #page .contain-header ul li {
-          list-style: none;
-          padding: 1em;
-          flex: 1;
-          margin: 1em;
-          background: white; }
-          html #page .contain-header ul li h1,
-          body #page .contain-header ul li h1 {
-            font-size: 1.5em; }
-          html #page .contain-header ul li h2,
-          body #page .contain-header ul li h2 {
-            font-size: 1em; }
-      html #page .contain-header .header-grafica,
-      body #page .contain-header .header-grafica {
-        min-height: 100px; }
     html #page .app-content,
     body #page .app-content {
       display: flex;
@@ -223,14 +270,24 @@ body {
           display: flex; }
           html #page .app-content table tbody .trHeader,
           body #page .app-content table tbody .trHeader {
-            display: flex;
             margin-bottom: 1em; }
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .trHeader,
+              body #page .app-content table tbody .trHeader {
+                display: none; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .trHeader,
+              body #page .app-content table tbody .trHeader {
+                display: flex; } }
             html #page .app-content table tbody .trHeader th,
             body #page .app-content table tbody .trHeader th {
               box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-              flex: 1;
+              flex: 2;
               padding: 10px;
               margin: 3px; }
+            html #page .app-content table tbody .trHeader th:nth-child(2),
+            body #page .app-content table tbody .trHeader th:nth-child(2) {
+              flex: 1; }
             html #page .app-content table tbody .trHeader th:nth-child(3),
             body #page .app-content table tbody .trHeader th:nth-child(3) {
               flex: 3; }
@@ -238,31 +295,65 @@ body {
           body #page .app-content table tbody .rowTr {
             display: flex;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-            margin: 10px;
+            min-height: 200px;
             flex-wrap: wrap; }
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .rowTr,
+              body #page .app-content table tbody .rowTr {
+                flex-direction: column-reverse; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .rowTr,
+              body #page .app-content table tbody .rowTr {
+                flex-direction: row; } }
             html #page .app-content table tbody .rowTr td,
             body #page .app-content table tbody .rowTr td {
-              flex: 1;
+              flex: 2;
               margin: 0 13px;
               justify-content: center;
               align-items: center;
-              display: flex;
-              flex-direction: column; }
+              flex-direction: column;
+              display: flex; }
               html #page .app-content table tbody .rowTr td img,
               body #page .app-content table tbody .rowTr td img {
                 width: 45%; }
+                @media screen and (max-width: 450px) {
+                  html #page .app-content table tbody .rowTr td img,
+                  body #page .app-content table tbody .rowTr td img {
+                    display: none; } }
+                @media screen and (min-width: 600px) {
+                  html #page .app-content table tbody .rowTr td img,
+                  body #page .app-content table tbody .rowTr td img {
+                    display: initial; } }
+            html #page .app-content table tbody .rowTr td:nth-child(2),
+            body #page .app-content table tbody .rowTr td:nth-child(2) {
+              flex: 1; }
+              @media screen and (max-width: 450px) {
+                html #page .app-content table tbody .rowTr td:nth-child(2),
+                body #page .app-content table tbody .rowTr td:nth-child(2) {
+                  display: none; } }
+              @media screen and (min-width: 600px) {
+                html #page .app-content table tbody .rowTr td:nth-child(2),
+                body #page .app-content table tbody .rowTr td:nth-child(2) {
+                  display: flex; } }
             html #page .app-content table tbody .rowTr td:nth-child(3),
             body #page .app-content table tbody .rowTr td:nth-child(3) {
               flex: 3; }
-            html #page .app-content table tbody .rowTr .progress,
-            body #page .app-content table tbody .rowTr .progress {
-              flex: 5 !important;
-              align-self: center !important;
+            @media screen and (max-width: 450px) {
+              html #page .app-content table tbody .rowTr td:nth-child(4),
+              body #page .app-content table tbody .rowTr td:nth-child(4) {
+                display: none; } }
+            @media screen and (min-width: 600px) {
+              html #page .app-content table tbody .rowTr td:nth-child(4),
+              body #page .app-content table tbody .rowTr td:nth-child(4) {
+                display: flex; } }
+            html #page .app-content table tbody .rowTr .progressLoad,
+            body #page .app-content table tbody .rowTr .progressLoad {
+              flex: 6 !important;
               padding: 2em !important;
-              margin: 4em !important; }
+              margin: 0 56px !important; }
     html #page .template-rowIcon,
     body #page .template-rowIcon {
-      height: 150px;
+      height: 100px;
       display: flex; }
 
 /*# sourceMappingURL=index.css.map */

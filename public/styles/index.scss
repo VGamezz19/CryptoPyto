@@ -1,6 +1,9 @@
 @import 'arrowIcon';
 @import 'loader';
 @import 'animationsComponents';
+@import 'loaderNietos';
+$break-small: 450px;
+$break-large: 600px;
 html,
 body {
     font-family: 'Cutive Mono', monospace !important;
@@ -56,6 +59,12 @@ body {
     #page {
         background: repeating-linear-gradient(33.333333deg, #1b1e3c -32em, #1b1e3c 0em, #E2E2E2 0em, #E2E2E2 47em) !important;
         position: relative;
+        @media screen and (max-width: $break-small) {
+            min-height: 1112px;
+        }
+        @media screen and (min-width: $break-large) {
+            min-height: 1064px;
+        }
         nav {
             background: linear-gradient(black, black);
             padding: 1em;
@@ -68,31 +77,8 @@ body {
                 color: white;
             }
         }
-        .contain-header {
-            display: flex;
-            flex-direction: column;
+        .contain-input-search {
             padding: 2em;
-            ul {
-                padding: 0;
-                display: flex;
-                li {
-                    h1 {
-                        font-size: 1.5em;
-                    }
-                    h2 {
-                        font-size: 1em;
-                    }
-                    list-style: none;
-                    padding: 1em;
-                    flex: 1;
-                    margin: 1em;
-                    background: white;
-                }
-                
-            }
-            .header-grafica {
-                min-height: 100px;
-            }
         }
         .app-content {
             display: flex;
@@ -107,13 +93,21 @@ body {
                     flex-direction: column;
                     display: flex;
                     .trHeader {
-                        display: flex;
                         margin-bottom: 1em;
+                        @media screen and (max-width: $break-small) {
+                            display: none;
+                        }
+                        @media screen and (min-width: $break-large) {
+                            display: flex;
+                        }
                         th {
                             box-shadow: $standar-box-shadow;
-                            flex: 1;
+                            flex: 2;
                             padding: 10px;
                             margin: 3px;
+                        }
+                        th:nth-child(2) {
+                            flex: 1;
                         }
                         th:nth-child(3) {
                             flex: 3;
@@ -122,37 +116,63 @@ body {
                     .rowTr {
                         display: flex;
                         box-shadow: $standar-box-shadow;
-                        margin: 10px;
+                        min-height: 200px;
                         flex-wrap: wrap;
+                        @media screen and (max-width: $break-small) {
+                            flex-direction: column-reverse
+                        }
+                        @media screen and (min-width: $break-large) {
+                            flex-direction: row
+                        }
                         td {
-                            flex: 1;
+                            flex: 2;
                             margin: 0 13px;
                             justify-content: center;
                             align-items: center;
-                            display: flex;
                             flex-direction: column;
+                            display: flex;
                             img {
+                                @media screen and (max-width: $break-small) {
+                                    display: none;
+                                }
+                                @media screen and (min-width: $break-large) {
+                                    display: initial;
+                                }
                                 width: 45%;
+                            }
+                        }
+                        td:nth-child(2) {
+                            flex: 1;
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                            @media screen and (min-width: $break-large) {
+                                display: flex;
                             }
                         }
                         td:nth-child(3) {
                             flex: 3;
                         }
-                        
-                        .progress {
-                            flex: 5 !important;
-                            align-self: center !important;
+                        td:nth-child(4) {
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                            @media screen and (min-width: $break-large) {
+                                display: flex;
+                            }
+                        }
+                        .progressLoad {
+                            flex: 6 !important;
                             padding: 2em !important;
-                            margin: 4em !important;
+                            margin: 0 56px !important;
                         }
                     }
                 }
             }
         }
         .template-rowIcon {
-            height: 150px;
+            height: 100px;
             display: flex;
         }
     }
-} 
-
+}
