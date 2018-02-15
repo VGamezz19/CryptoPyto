@@ -3,7 +3,6 @@ import Search from './ContentApp/Search'
 import ContentCoins from './ContentApp/ContentCoins'
 import * as Scroll from 'react-scroll';
 import cryptoApi from '../API-Cli/cryptoApi.js';
-
 export default class App extends Component {
   constructor() {
     super()
@@ -15,11 +14,18 @@ export default class App extends Component {
     }
   }
   componentWillMount() {
-    Scroll.animateScroll.scrollToTop();
-
     fetch('./img-bbdd.json').then(res => res.json()).then(res => this.setState({ imgbbdd: res }))
   }
   componentDidMount = () => cryptoApi.getCoins()
+    .then(res => {
+      var newArr = res.map(coin => {
+        this.state.imgbbdd.map(img => img.name === coin.name ? coin.img = img.img : '')
+        if (coin.img) return coin
+        coin.img = './img/defaulticon.png'
+        return coin
+      })
+      return newArr
+    })
     .then(res => this.setState({ dataCoins: res }))
     .then(res => this.setState({
       coinsShow: this.state.dataCoins.filter((coin, index) => index <= this.state.lengthCoin)

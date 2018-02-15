@@ -19,31 +19,41 @@ class RowComponent extends Component {
     componentDidMount = () => {
         cryptoApi.getCoinHistorical(this.props.dataCoin.symbol)
             .then(res => this.setState(prevState => {
-               let data = res.Data.reverse()
+                if (res.Response === 'Error') return { historicalCoin: 'error', chartCloseData: 'error' }
+
+                let data = res.Data.reverse()
+                setInterval(() => {
+                    cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
+                        .then(res => this.setState(prevState => {
+                            return {
+                                historicalCoin: prevState.historicalCoin.concat(res.Data),
+                                chartCloseData: [...prevState.chartCloseData, res.Data[0].close]
+                            }
+                        }))
+                }, 15000)
                 return {
                     historicalCoin: data,
                     chartCloseData: data.map(el => el.close)
                 }
             }))
-
-        setInterval(() => {
-            cryptoApi.getCoinLastHistory(this.props.dataCoin.symbol)
-                .then(res => this.setState(prevState => {
-                    return {
-                        historicalCoin: prevState.historicalCoin.concat(res.Data),
-                        chartCloseData: [...prevState.chartCloseData, res.Data[0].close]
-                    }
-                }))
-        }, 15000)
     }
 
     render() {
-        
+        console.log(this.state.chartCloseData)
         if (this.state.chartCloseData.length < 1) {
             return (
                 <tr className='rowTr'>
                     <ColName nameValue={this.props.dataCoin} />
                     <LoaderNietos />
+                </tr>
+            )
+        }
+
+        if (this.state.historicalCoin == 'error') {
+            return (
+                <tr className='rowTr'>
+                    <ColName nameValue={this.props.dataCoin} />
+                    <td className ='progressLoad'><h1>Sorry...No data found</h1></td>
                 </tr>
             )
         }

@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 export default class Search extends Component{ 
     constructor() {
@@ -22,7 +23,6 @@ export default class Search extends Component{
         })
 
         if(this.state.inputValue.length > 2) {
-          console.log("Entra...")
           this.levenstein(this.state.inputValue)
         }
     }
