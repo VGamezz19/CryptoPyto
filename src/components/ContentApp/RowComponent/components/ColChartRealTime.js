@@ -9,7 +9,7 @@ function ColChartRealTime(props) {
       ['coin', ...props.chartValueRealTime]
     ],
     colors: {
-      coin: '#ff0000'
+      coin: '#ff8000'
     }
 
   };
