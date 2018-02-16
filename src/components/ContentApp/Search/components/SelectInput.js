@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 export default function SelectInput(props) {
-    console.log(props)
     return (
         <div class='contain-select'>
             {

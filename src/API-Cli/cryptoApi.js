@@ -1,6 +1,3 @@
-
-console.log("HOLA AMIGOS")
-
 class CryptoApi {
     constructor() {
         this.proxyurl="https://cors-anywhere.herokuapp.com/"
@@ -30,7 +27,6 @@ class CryptoApi {
 }
 
 var cryptoApi = new CryptoApi()
-console.log("Hey")
 
 if (typeof module !== 'undefined')
     module.exports = cryptoApi
