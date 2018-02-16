@@ -11,15 +11,13 @@ const data = {
   };
         return(
           <td ><C3Chart 
-          axis= {{
-           y: {
-             show: true,
-             tick: {
-              fit: true
-            }
-           }
-        
-         }}
+          axis={{
+            y: {
+              tick: {
+                format: (e) => e.toFixed(4)
+              }
+            },
+          }} 
          data={data} size={{height:200}}/></td>
         )
     

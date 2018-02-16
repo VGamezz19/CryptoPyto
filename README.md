@@ -98,11 +98,11 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 
 #### Estructura de componentes React
 La estructura principal de la aplicación contará un total de 10 componentes, distribuidos jerárquicamente como se muestra en el siguiente diagrama:
-![image](https://github.com/VGamezz19/CryptoPyto/tree/nachoreactdir/public/img/flow-hierarchy-components)
+![image](https://github.com/VGamezz19/CryptoPyto/blob/nachoreactdir/public/img/flow-hierarchy-components.png)
 
 - **App** será el componente principal y será el encargado de transferir la información entre sus dos subcomponentes smart: ContentCoins y Search. App realizará la primera llamada a la API, cryptoApi.getCoins, para obtener toda la información de todas las monedas y así poder transferirla a sus dos subcomponentes. App además realiza otra llamada a una API creada específicamente para mostrar los iconos de las criptomonedas.
 
-- El componente **Search** contendrá principalmente el input que se encargará de capturar los caracteres que introduzca el usuario para realizar la búsqueda instantánea de las criptomonedas que se aproximen a la búsqueda realizada.
+- El componente **Search** contendrá principalmente el input que se encargará de capturar los caracteres que introduzca el usuario para realizar la búsqueda instantánea de las criptomonedas que se aproximen a la búsqueda realizada. Se dividirá en 3 subcomponentes a los cuales le transferirá información: **ContentRowSelect**, **InputSearch** e **SelectInput**.
 
 - El componente **ContentCoins** será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes a los cuales les trans: IconsRow, Loader y RowComponent.
 

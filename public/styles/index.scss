@@ -186,6 +186,9 @@ body {
                         td:nth-child(2) {
                             flex: 1;
                             color: white;
+                            h1 {
+                                color:black;
+                            }
                             span{
                                 padding: 0 1em !important;
                                 border-radius: 7px !important;

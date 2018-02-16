@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default function LoaderNiesto() {
+export default function LoaderRow() {
     return (
         <td class="cs-loader progressLoad">
             <div class="cs-loader-inner">

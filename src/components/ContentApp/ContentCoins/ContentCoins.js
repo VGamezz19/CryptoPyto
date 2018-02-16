@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import C3Chart from 'react-c3js';
-import RowComponent from './RowComponent/RowComponent'
-import Loader from './Loader/Loader'
-import IconsRow from './IconRow/IconsRow'
+import RowComponent from '../RowComponent/RowComponent'
+import Loader from './components/Loader'
+import IconsRow from './components/IconsRow'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 
-class ContentCoins extends Component {
-
-  render() {
+export default function ContentCoins(props){
     return (
       <div>
 
@@ -27,17 +25,14 @@ class ContentCoins extends Component {
                 transitionName="example"
                 transitionEnterTimeout={500}
                 transitionLeaveTimeout={300}>
-                {this.props.coinsShow.length < 1 ? <Loader /> : this.props.coinsShow.map(coin => <RowComponent dataCoin={coin}  key={coin.id}/>)}
+                {props.coinsShow.length < 1 ? <Loader /> : props.coinsShow.map(coin => <RowComponent dataCoin={coin}  key={coin.id}/>)}
               </CSSTransitionGroup>
             </tbody>
           </table>
         </section>
         <div class='template-rowIcon'>
-          <IconsRow onAddingMoreCoins={this.props.addingRowIcon} />
+          <IconsRow onAddingMoreCoins={props.addingRowIcon} />
         </div>
       </div>
     );
   }
-}
-
-export default ContentCoins;

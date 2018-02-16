@@ -14,7 +14,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "^22.3.0",
+    "jest-cli": "^22.3.0",
+    "react-test-renderer": "^16.2.0"
   }
 }
