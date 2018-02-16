@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import C3Chart from 'react-c3js';
 import RowComponent from '../RowComponent/RowComponent'
-import Loader from './Loader/Loader'
-import IconsRow from './IconRow/IconsRow'
+import Loader from './components/Loader'
+import IconsRow from './components/IconsRow'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 
