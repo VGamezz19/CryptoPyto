@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import SearchInput, { createFilter } from 'react-search-input'
 import { CSSTransitionGroup } from 'react-transition-group'
-import RowComponent from './RowComponent/RowComponent'
+import RowComponent from '../RowComponent/RowComponent'
 const KEYS_TO_FILTERS = ['name', 'symbol', 'id' ]
 
 export default class Search extends Component {

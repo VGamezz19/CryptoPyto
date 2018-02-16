@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Search from './ContentApp/Search'
-import ContentCoins from './ContentApp/ContentCoins'
+import Search from './ContentApp/Search/Search'
+import ContentCoins from './ContentApp/ContentCoins/ContentCoins'
 import * as Scroll from 'react-scroll';
 import cryptoApi from '../API-Cli/cryptoApi.js';
 export default class App extends Component {
