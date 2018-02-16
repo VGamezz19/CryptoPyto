@@ -4,7 +4,7 @@ import ColChart from './components/ColChart'
 import ColName from './components/ColName'
 import ColPrice from './components/ColPrice'
 import ColChartRealTime from './components/ColChartRealTime'
-import LoaderNietos from './components/LoaderNietos'
+import LoaderRow from './components/LoaderRow'
 
 class RowComponent extends Component {
     constructor() {
@@ -56,7 +56,7 @@ class RowComponent extends Component {
             return (
                 <tr className='rowTr'>
                     <ColName nameValue={this.props.dataCoin} />
-                    <LoaderNietos />
+                    <LoaderRow />
                 </tr>
             )
         }
