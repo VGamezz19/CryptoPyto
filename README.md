@@ -59,6 +59,43 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 3. cryptoApi.getCoinLastHistory: Nos devolverá el último movimiento de datos obtenidos de la moneda buscada.
 
 
+#### Estructura de directorios
+```
+├── API-Cli
+│   └── cryptoApi.js
+├── __test__
+│   └── App.test.js
+├── components
+│   ├── App.js
+│   └── ContentApp
+│       ├── ContentCoins
+│       │   ├── ContentCoins.js
+│       │   └── components
+│       │       ├── IconsRow.js
+│       │       └── Loader.js
+│       ├── RowComponent
+│       │   ├── RowComponent.js
+│       │   └── components
+│       │       ├── ColChart.js
+│       │       ├── ColChartRealTime.js
+│       │       ├── ColName.js
+│       │       ├── ColPrice.js
+│       │       └── LoaderRow.js
+│       └── Search
+│           └── Search.js
+├── index.js
+├── lev.js
+├── registerServiceWorker.js
+└── tdd
+    ├── SpecRunner.html
+    ├── scripts
+    │   ├── cryptoApi.js
+    │   └── sum.js
+    └── tests
+        ├── apiSpec.js
+        └── sumSpec.js
+```
+
 #### Estructura de componentes React
 La estructura principal de la aplicación contará un total de 10 componentes, distribuidos jerárquicamente como se muestra en el siguiente diagrama:
 ![image](https://github.com/VGamezz19/CryptoPyto/tree/nachoreactdir/public/img/flow-hierarchy-components)
@@ -67,13 +104,13 @@ La estructura principal de la aplicación contará un total de 10 componentes, d
 
 - El componente **Search** contendrá principalmente el input que se encargará de capturar los caracteres que introduzca el usuario para realizar la búsqueda instantánea de las criptomonedas que se aproximen a la búsqueda realizada.
 
-- El componente **ContentCoins** será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes: IconsRow, Loader y RowComponent.
+- El componente **ContentCoins** será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes a los cuales les trans: IconsRow, Loader y RowComponent.
 
 - El componente **Loader** simplemente mostrará un icono de loading mientras se va cargando la información. Será un dump component.
 
-- **IconsRow** es un dump component que
+- **IconsRow** es un dump component que se encargará de mostrar más filas cuando apretamos sobre el icono de la flecha.
 
-- **RowComponent** será también un smart component y tendrá la responsabilidad de hacer la segunda y tercera llamadas a la API. La segunda llamada, cryptoApi.getCoinHistorical servirá para obtener el histórico de los 20 últimos movimientos de cada moneda. La tercera llamada, cryptoApi.getCoinLastHistory servirá para obtener el último valor de cada moneda, para lo cual necesitamos realizar las peticiones cada 15 segundos. Toda la información recibida de la API la utilizará el RowComponent para transferírsela a sus 4 subcomponentes dump: ColName, ColPrice, ColChartHistory y ColChartRealTime.
+- **RowComponent** será también un smart component y tendrá la responsabilidad de hacer la segunda y tercera llamadas a la API. La segunda llamada, cryptoApi.getCoinHistorical servirá para obtener el histórico de los 20 últimos movimientos de cada moneda. La tercera llamada, cryptoApi.getCoinLastHistory servirá para obtener el último valor de cada moneda, para lo cual necesitamos realizar las peticiones cada 15 segundos. Toda la información recibida de la API la utilizará el RowComponent para transferírsela a sus 5 subcomponentes dump: **ColName**, **ColPrice**,**ColChartHistory**, **ColChartRealTime** y **LoaderRow**.
 
 - **ColName** es el componente que mostrará el nombre de la moneda. Éste se obtiene desde la primera llamada a la API en en el componente App y simplemente se va transmitiendo entre los subcomponentes hasta llegar a ColName.
 
@@ -82,3 +119,5 @@ La estructura principal de la aplicación contará un total de 10 componentes, d
 - **ColChartHistory** es un componente funcional y mostrará la información de los 20 últimos valores de la moneda en forma de gráfico estático.
 
 - **ColChartRealTime** es también un componente funcional y mostrará en forma de gráfico dinámico el último valor de la moneda. Se actualizará cada 15 segundos igual que ColPrice.
+
+- **LoaderRow** es un componente funcional que utilizará RowComponent para realizar una animación mientras se van cargando las filas.
