@@ -59,9 +59,9 @@ Cryptopyto es una app que permitirá realizar la búsqueda de las diferentes cri
 
 #### Estructura de la API
 El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se compone principalmente de 3 llamadas:
-1. cryptoApi.getCoins: Nos devolverá la información de todas las monedas del mercado en un array de objetos.
-2. cryptoApi.getCoinHistorical: Nos devolverá el historial de datos de la moneda que le solicitemos, los 20 últimos movimientos.
-3. cryptoApi.getCoinLastHistory: Nos devolverá el último movimiento de datos obtenidos de la moneda buscada.
+1. **cryptoApi.getCoins:** Nos devolverá la información de todas las monedas del mercado en un array de objetos.
+2. **cryptoApi.getCoinHistorical:** Nos devolverá el historial de datos de la moneda que le solicitemos, los 20 últimos movimientos.
+3. **cryptoApi.getCoinLastHistory:** Nos devolverá el último movimiento de datos obtenidos de la moneda buscada.
 
 
 #### Estructura de directorios SRC
@@ -112,7 +112,7 @@ La estructura principal de la aplicación contará un total de 10 componentes, d
 
 - El componente **Search** contendrá principalmente el input que se encargará de capturar los caracteres que introduzca el usuario para realizar la búsqueda instantánea de las criptomonedas que se aproximen a la búsqueda realizada. Se dividirá en 3 subcomponentes a los cuales le transferirá información: **ContentRowSelect**, **InputSearch** e **SelectInput**.
 
-- El componente **ContentCoins** será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes a los cuales les trans: IconsRow, Loader y RowComponent.
+- El componente **ContentCoins** será el encargado de mostrar todas las rows o filas de la tabla con las criptomonedas. Este componente ContentCoins contedrá 3 subcomponentes a los cuales les transferirá la información: IconsRow, Loader y RowComponent.
 
 - El componente **Loader** simplemente mostrará un icono de loading mientras se va cargando la información. Será un dump component.
 
