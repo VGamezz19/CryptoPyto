@@ -10,21 +10,23 @@ Haga [Click aqui](http://cryptopyto.surge.sh/) para ver el diseño **actual** de
 Aplicación que va a recoger datos de una API a tiempo real, para ver el mercado actual de las crypto monedas.
 
 ## Equipo
-   - Pablo Hortelano
-   - Victor Gámez
-   - Nacho Miralles
+   - [Pablo Hortelano](https://github.com/phortela1n)
+   - [Victor Gámez](https://github.com/VGamezz19)
+   - [Nacho Miralles](https://github.com/nachomirsol)
 
 ## Tecnologias
    - ReactJS
    - ES6
    - API-Client
-   - sass
-   - jquery
-   - bootstrap
-   - css3
-   - flexBox
-   - html5
    - Jasmine
+   - Jest
+   - Bootstrap
+   - jQuery
+   - Sass
+   - flexBox
+   - Css3
+   - Html5
+   
 
 ### API 
     documentacion: https://www.cryptocompare.com/api/
