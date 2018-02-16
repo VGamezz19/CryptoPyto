@@ -1,4 +1,4 @@
-# CryptoPyto
+# 💱CryptoPyto
 
 ## Aplicación
 Haga [Click aqui](http://cryptopyto.surge.sh/) para ver el diseño **actual** de la aplicacion.
