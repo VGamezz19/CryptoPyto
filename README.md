@@ -1,6 +1,9 @@
 # CryptoPyto
+
+## Aplicación
 Haga [Click aqui](http://cryptopyto.surge.sh/) para ver el diseño **actual** de la aplicacion.
 
+## MockUp Inicial
 ![Imagen](https://github.com/VGamezz19/CryptoPyto/blob/vicBranch/design/mockUp.png)
 
 # APP CRYPTOMONEDA
@@ -60,7 +63,8 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 
 
 #### Estructura de directorios SRC
-```├── API-Cli
+```
+├── API-Cli
 │   └── cryptoApi.js
 ├── __test__
 │   ├── App.test.js
