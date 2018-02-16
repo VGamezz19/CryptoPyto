@@ -1,5 +1,5 @@
 # CryptoPyto
-Haga [Click aqui](http://disgusted-picture.surge.sh/) para ver el diseño **actual** de la aplicacion.
+Haga [Click aqui](http://cryptopyto.surge.sh/) para ver el diseño **actual** de la aplicacion.
 
 ![Imagen](https://github.com/VGamezz19/CryptoPyto/blob/vicBranch/design/mockUp.png)
 
@@ -59,12 +59,19 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 3. cryptoApi.getCoinLastHistory: Nos devolverá el último movimiento de datos obtenidos de la moneda buscada.
 
 
-#### Estructura de directorios
-```
-├── API-Cli
+#### Estructura de directorios SRC
+```├── API-Cli
 │   └── cryptoApi.js
 ├── __test__
-│   └── App.test.js
+│   ├── App.test.js
+│   └── __test__RowComponent
+│       ├── RowComponent.js
+│       └── components
+│           ├── ColChart.js
+│           ├── ColChartRealTime.js
+│           ├── ColName.js
+│           ├── ColPrice.js
+│           └── LoaderRow.js
 ├── components
 │   ├── App.js
 │   └── ContentApp
@@ -82,18 +89,13 @@ El archivo cryptoApi.js contendrá todas las llamadas a la API en cuestión. Se 
 │       │       ├── ColPrice.js
 │       │       └── LoaderRow.js
 │       └── Search
-│           └── Search.js
+│           ├── Search.js
+│           └── components
+│               ├── ContentRowSelect.js
+│               ├── InputSearch.js
+│               └── SelectInput.js
 ├── index.js
-├── lev.js
-├── registerServiceWorker.js
-└── tdd
-    ├── SpecRunner.html
-    ├── scripts
-    │   ├── cryptoApi.js
-    │   └── sum.js
-    └── tests
-        ├── apiSpec.js
-        └── sumSpec.js
+└── registerServiceWorker.js
 ```
 
 #### Estructura de componentes React
