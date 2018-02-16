@@ -37,7 +37,7 @@ export default class Search extends Component {
   render() {
     const filterCoins = this.state.cryptoListArray.filter(createFilter(this.state.inputValue, KEYS_TO_FILTERS))
     return (
-      <header class='contain-input-search'>
+      <header className='contain-input-search'>
         <InputSearch inputValue={this.state.inputValue} cryptoListArray={this.state.cryptoListArray} keepInput={this.keepInput} />
         <SelectInput inputValue={this.state.inputValue} onClickCoin={this.onClickCoin} filterCoins={filterCoins} />
         {this.state.cryptoListArray.length < 1 ? '' : this.state.coinSelect.length < 1 ? '' : <ContentRowSelect coinSelect={this.state.coinSelect} cryptoListArray={this.state.cryptoListArray} />}

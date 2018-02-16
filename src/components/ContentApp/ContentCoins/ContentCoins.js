@@ -30,7 +30,7 @@ export default function ContentCoins(props){
             </tbody>
           </table>
         </section>
-        <div class='template-rowIcon'>
+        <div className='template-rowIcon'>
           <IconsRow onAddingMoreCoins={props.addingRowIcon} />
         </div>
       </div>

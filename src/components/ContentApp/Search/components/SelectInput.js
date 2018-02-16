@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default function SelectInput(props) {
     return (
-        <div class='contain-select'>
+        <div className='contain-select'>
             {
               props.inputValue ?
                 props.filterCoins.map(coin => {
